@@ -1,0 +1,1836 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="InterView Question," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="勿忘初心" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="前端面试题汇，总持续更新中">
+<meta name="keywords" content="InterView Question">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端面试题汇总3">
+<meta property="og:url" content="http://lucylc.com/InterView/2017/02/24/前端面试题汇总3.html">
+<meta property="og:site_name" content="勿忘初心">
+<meta property="og:description" content="前端面试题汇，总持续更新中">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-20T10:15:40.967Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端面试题汇总3">
+<meta name="twitter:description" content="前端面试题汇，总持续更新中">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"always","offset":12,"offset_float":0},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6389090183425295000',
+      author: 'rossilc'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://lucylc.com/InterView/2017/02/24/前端面试题汇总3.html"/>
+
+
+
+
+
+  <title> 前端面试题汇总3 | 勿忘初心 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?acf364c088033e66a7139a8ea03eaf63";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">勿忘初心</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">繁忙的工作、生活的琐事遗失最初美好纯洁的自己。勿忘初心，人生若只如初见</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+      <li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+        function c() {
+            var e = document.createElement("link");
+            e.setAttribute("type", "text/css");
+            e.setAttribute("rel", "stylesheet");
+            e.setAttribute("href", f);
+            e.setAttribute("class", l);
+            document.body.appendChild(e)
+        }
+
+        function h() {
+            var e = document.getElementsByClassName(l);
+            for (var t = 0; t < e.length; t++) {
+                document.body.removeChild(e[t])
+            }
+        }
+
+        function p() {
+            var e = document.createElement("div");
+            e.setAttribute("class", a);
+            document.body.appendChild(e);
+            setTimeout(function() {
+                document.body.removeChild(e)
+            }, 100)
+        }
+
+        function d(e) {
+            return {
+                height : e.offsetHeight,
+                width : e.offsetWidth
+            }
+        }
+
+        function v(i) {
+            var s = d(i);
+            return s.height > e && s.height < n && s.width > t && s.width < r
+        }
+
+        function m(e) {
+            var t = e;
+            var n = 0;
+            while (!!t) {
+                n += t.offsetTop;
+                t = t.offsetParent
+            }
+            return n
+        }
+
+        function g() {
+            var e = document.documentElement;
+            if (!!window.innerWidth) {
+                return window.innerHeight
+            } else if (e && !isNaN(e.clientHeight)) {
+                return e.clientHeight
+            }
+            return 0
+        }
+
+        function y() {
+            if (window.pageYOffset) {
+                return window.pageYOffset
+            }
+            return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+        }
+
+        function E(e) {
+            var t = m(e);
+            return t >= w && t <= b + w
+        }
+
+        function S() {
+            var e = document.createElement("audio");
+            e.setAttribute("class", l);
+            e.src = i;
+            e.loop = false;
+            e.addEventListener("canplay", function() {
+                setTimeout(function() {
+                    x(k)
+                }, 500);
+                setTimeout(function() {
+                    N();
+                    p();
+                    for (var e = 0; e < O.length; e++) {
+                        T(O[e])
+                    }
+                }, 15500)
+            }, true);
+            e.addEventListener("ended", function() {
+                N();
+                h()
+            }, true);
+            e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+            document.body.appendChild(e);
+            e.play()
+        }
+
+        function x(e) {
+            e.className += " " + s + " " + o
+        }
+
+        function T(e) {
+            e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+        }
+
+        function N() {
+            var e = document.getElementsByClassName(s);
+            var t = new RegExp("\\b" + s + "\\b");
+            for (var n = 0; n < e.length; ) {
+                e[n].className = e[n].className.replace(t, "")
+            }
+        }
+
+        var e = 30;
+        var t = 30;
+        var n = 350;
+        var r = 350;
+        var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+        var s = "mw-harlem_shake_me";
+        var o = "im_first";
+        var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+        var a = "mw-strobe_light";
+        var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+        var l = "mw_added_css";
+        var b = g();
+        var w = y();
+        var C = document.getElementsByTagName("*");
+        var k = null;
+        for (var L = 0; L < C.length; L++) {
+            var A = C[L];
+            if (v(A)) {
+                if (E(A)) {
+                    k = A;
+                    break
+                }
+            }
+        }
+        if (A === null) {
+            console.warn("Could not find a node of the right size. Please try a different page.");
+            return
+        }
+        c();
+        S();
+        var O = [];
+        for (var L = 0; L < C.length; L++) {
+            var A = C[L];
+            if (v(A)) {
+                O.push(A)
+            }
+        }
+    })()'>High一下</a> </li>
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="search-mask">
+  <div class="popup local-search-popup">
+    <div class="local-search-header clearfix">
+      <span class="search-icon">
+        <i class="fa fa-search"></i>
+      </span>
+      <span class="popup-btn-close">
+        <i class="fa fa-times-circle"></i>
+      </span>
+      <div class="local-search-input-wrapper">
+        <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      </div>
+    </div>
+    <div id="local-search-result"></div>
+  </div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://lucylc.com/InterView/2017/02/24/前端面试题汇总3.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="RossiLc">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/author.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="勿忘初心">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="勿忘初心" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                前端面试题汇总3
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-24T10:10:24+08:00">
+                2017-02-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/InterView/" itemprop="url" rel="index">
+                    <span itemprop="name">InterView</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/InterView/2017/02/24/前端面试题汇总3.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="InterView/2017/02/24/前端面试题汇总3.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/InterView/2017/02/24/前端面试题汇总3.html" class="leancloud_visitors" data-flag-title="前端面试题汇总3">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  前端面试题汇，总持续更新中
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <a id="more"></a>
+<h3 id="HTML面试题"><a href="#HTML面试题" class="headerlink" title="HTML面试题"></a>HTML面试题</h3><p>1.XHTML和HTML有什么区别</p>
+<blockquote>
+<ul>
+<li>HTML是一种基本的WEB网页设计语言，XHTML是一个基于XML的置标语言<br>最主要的不同：</li>
+</ul>
+<ul>
+<li>XHTML 元素必须被正确地嵌套。</li>
+</ul>
+<ul>
+<li>XHTML 元素必须被关闭。</li>
+</ul>
+<ul>
+<li>标签名必须用小写字母。</li>
+</ul>
+<ul>
+<li>XHTML 文档必须拥有根元素。</li>
+</ul>
+</blockquote>
+<p>2.前端页面有哪三层构成，分别是什么?作用是什么?</p>
+<blockquote>
+<ul>
+<li>结构层 Html 表示层 CSS 行为层 js;</li>
+</ul>
+</blockquote>
+<p>3.你做的页面在哪些流览器测试过?这些浏览器的内核分别是什么?</p>
+<blockquote>
+<ul>
+<li>Ie(Ie内核) 火狐（Gecko） 谷歌（webkit,Blink） opera(Presto),Safari(wbkit)</li>
+</ul>
+</blockquote>
+<p>4.什么是语义化的HTML?</p>
+<blockquote>
+<ul>
+<li>直观的认识标签 对于搜索引擎的抓取有好处，用正确的标签做正确的事情！</li>
+</ul>
+<ul>
+<li>html语义化就是让页面的内容结构化，便于对浏览器、搜索引擎解析；<br>在没有样式CCS情况下也以一种文档格式显示，并且是容易阅读的。搜索引擎的爬虫依赖于标记来确定上下文和各个关键字的权重，利于 SEO。</li>
+</ul>
+<ul>
+<li>使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。</li>
+</ul>
+</blockquote>
+<p>5.HTML5 为什么只需要写 !DOCTYPE HTML？</p>
+<blockquote>
+<ul>
+<li>HTML5 不基于 SGML，因此不需要对DTD进行引用，但是需要doctype来规范浏览器的行为（让浏览器按照它们应该的方式来运行）；而HTML4.01基于SGML,所以需要对DTD进行引用，才能告知浏览器文档所使用的文档类型。</li>
+</ul>
+</blockquote>
+<p>6.Doctype作用？标准模式与兼容模式各有什么区别?</p>
+<blockquote>
+<ul>
+<li>!DOCTYPE声明位于位于HTML文档中的第一行，处于html 标签之前。告知浏览器的解析器用什么文档标准解析这个文档。DOCTYPE不存在或格式不正确会导致文档以兼容模式呈现。</li>
+</ul>
+<ul>
+<li>标准模式的排版 和JS运作模式都是以该浏览器支持的最高标准运行。在兼容模式中，页面以宽松的向后兼容的方式显示,模拟老式浏览器的行为以防止站点无法工作。</li>
+</ul>
+</blockquote>
+<p>7.html5有哪些新特性、移除了那些元素？如何处理HTML5新标签的浏览器兼容问题？如何区分 HTML 和<br>HTML5？</p>
+<blockquote>
+<ul>
+<li>HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。</li>
+</ul>
+<ul>
+<li>绘画 canvas</li>
+</ul>
+<ul>
+<li>用于媒介回放的 video 和 audio 元素</li>
+</ul>
+<ul>
+<li>本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失；</li>
+</ul>
+<ul>
+<li>sessionStorage 的数据在浏览器关闭后自动删除</li>
+</ul>
+<ul>
+<li>语意化更好的内容元素，比如 article、footer、header、nav、section</li>
+</ul>
+<ul>
+<li>表单控件，calendar、date、time、email、url、search</li>
+</ul>
+<ul>
+<li>新的技术webworker, websockt, Geolocation<br>移除的元素</li>
+</ul>
+<ul>
+<li>纯表现的元素：basefont，big，center，font, s，strike，tt，u；</li>
+</ul>
+<ul>
+<li>对可用性产生负面影响的元素：frame，frameset，noframes；<br>支持HTML5新标签：</li>
+</ul>
+<ul>
+<li>IE8/IE7/IE6支持通过document.createElement方法产生的标签，</li>
+</ul>
+<ul>
+<li>可以利用这一特性让这些浏览器支持HTML5新标签，</li>
+</ul>
+<ul>
+<li>浏览器支持新标签后，还需要添加标签默认的样式：</li>
+</ul>
+</blockquote>
+<p>8.请描述一下 cookies，sessionStorage 和 localStorage 的区别？</p>
+<blockquote>
+<ul>
+<li>cookie在浏览器和服务器间来回传递。 sessionStorage和localStorage不会</li>
+</ul>
+<ul>
+<li>sessionStorage和localStorage的存储空间更大；</li>
+</ul>
+<ul>
+<li>sessionStorage和localStorage有更多丰富易用的接口；</li>
+</ul>
+<ul>
+<li>sessionStorage和localStorage各自独立的存储空间；</li>
+</ul>
+</blockquote>
+<p>9.如何实现浏览器内多个标签页之间的通信?</p>
+<blockquote>
+<ul>
+<li>调用localstorge、cookies等本地存储方式</li>
+</ul>
+</blockquote>
+<h3 id="CSS面试题"><a href="#CSS面试题" class="headerlink" title="CSS面试题"></a>CSS面试题</h3><p>1.简要说一下CSS的元素分类</p>
+<blockquote>
+<ul>
+<li>块级元素：div,p,h1,form,ul,li;</li>
+</ul>
+<ul>
+<li>行内元素 : span&gt;,a,label,input,img,strong,em;</li>
+</ul>
+</blockquote>
+<p>2.CSS隐藏元素的几种方法（至少说出三种）</p>
+<blockquote>
+<ul>
+<li>Opacity:元素本身依然占据它自己的位置并对网页的布局起作用。它也将响应用户交互;</li>
+</ul>
+<ul>
+<li>Visibility:与 opacity 唯一不同的是它不会响应任何用户交互。此外，元素在读屏软件中也会被隐藏;</li>
+</ul>
+<ul>
+<li>Display:display 设为 none 任何对该元素直接打用户交互操作都不可能生效。此外，读屏软件也不会读到元素的内容。这种方式产生的效果就像元素完全不存在;</li>
+</ul>
+<ul>
+<li>Position:不会影响布局，能让元素保持可以操作;</li>
+</ul>
+<ul>
+<li>Clip-path:clip-path 属性还没有在 IE 或者 Edge 下被完全支持。如果要在你的 clip-path 中使用外部的 SVG 文件，浏览器支持度还要低;</li>
+</ul>
+</blockquote>
+<p>3.CSS清楚浮动的几种方法（至少两种）</p>
+<blockquote>
+<ul>
+<li>使用带clear属性的空元素</li>
+</ul>
+<ul>
+<li>使用CSS的overflow属性；</li>
+</ul>
+<ul>
+<li>使用CSS的:after伪元素；</li>
+</ul>
+<ul>
+<li>使用邻接元素处理；</li>
+</ul>
+</blockquote>
+<p>4.CSS居中（包括水平居中和垂直居中）</p>
+<blockquote>
+<h4 id="内联元素居中方案"><a href="#内联元素居中方案" class="headerlink" title="内联元素居中方案"></a>内联元素居中方案</h4><p><strong>水平居中设置：</strong><br>1.行内元素</p>
+<ul>
+<li>设置 text-align:center；</li>
+</ul>
+<p>2.Flex布局</p>
+<ul>
+<li>设置display:flex;justify-content:center;(灵活运用,支持Chroime，Firefox，IE9+)</li>
+</ul>
+<p><strong>垂直居中设置：</strong><br>1.父元素高度确定的单行文本（内联元素）</p>
+<ul>
+<li>设置 height = line-height；</li>
+</ul>
+<p>2.父元素高度确定的多行文本（内联元素）</p>
+<ul>
+<li>a:插入 table （插入方法和水平居中一样），然后设置 vertical-align:middle；</li>
+</ul>
+<ul>
+<li>b:先设置 display:table-cell 再设置 vertical-align:middle；</li>
+</ul>
+<h4 id="块级元素居中方案"><a href="#块级元素居中方案" class="headerlink" title="块级元素居中方案"></a>块级元素居中方案</h4><p><strong>水平居中设置：</strong><br>1.定宽块状元素</p>
+<ul>
+<li>设置 左右 margin 值为 auto；</li>
+</ul>
+<p>2.不定宽块状元素</p>
+<ul>
+<li>a:在元素外加入 table 标签（完整的，包括 table、tbody、tr、td），该元素写在 td 内，然后设置 margin 的值为 auto；</li>
+</ul>
+<ul>
+<li>b:给该元素设置 displa:inine 方法；</li>
+</ul>
+<ul>
+<li>c:父元素设置 position:relative 和 left:50%，子元素设置 position:relative 和 left:50%；</li>
+</ul>
+<p><strong>垂直居中设置：</strong></p>
+<ul>
+<li>使用position:absolute（fixed）,设置left、top、margin-left、margin-top的属性;</li>
+</ul>
+<ul>
+<li>利用position:fixed（absolute）属性，margin:auto这个必须不要忘记了;</li>
+</ul>
+<ul>
+<li>利用display:table-cell属性使内容垂直居中;</li>
+</ul>
+<ul>
+<li>使用css3的新属性transform:translate(x,y)属性;</li>
+</ul>
+<ul>
+<li>使用:before元素;</li>
+</ul>
+</blockquote>
+<p>5.写出几种IE6 BUG的解决方法</p>
+<blockquote>
+<ul>
+<li>双边距BUG float引起的 使用display</li>
+</ul>
+<ul>
+<li>3像素问题 使用float引起的 使用dislpay:inline -3px</li>
+</ul>
+<ul>
+<li>超链接hover 点击后失效 使用正确的书写顺序 link visited hover active</li>
+</ul>
+<ul>
+<li>Ie z-index问题 给父级添加position:relative</li>
+</ul>
+<ul>
+<li>Png 透明 使用js代码 改</li>
+</ul>
+<ul>
+<li>Min-height 最小高度 ！Important 解决’</li>
+</ul>
+<ul>
+<li>select 在ie6下遮盖 使用iframe嵌套</li>
+</ul>
+<ul>
+<li>为什么没有办法定义1px左右的宽度容器（IE6默认的行高造成的，使用over:hidden,zoom:0.08 line-height:1px）</li>
+</ul>
+</blockquote>
+<p>6.对于SASS或是Less的了解程度？喜欢那个？</p>
+<blockquote>
+<ul>
+<li>语法介绍</li>
+</ul>
+</blockquote>
+<p>7.Bootstrap了解程度</p>
+<blockquote>
+<ul>
+<li>特点，排版，插件的使用;</li>
+</ul>
+</blockquote>
+<p>8.页面导入样式时，使用link和@import有什么区别？</p>
+<blockquote>
+<ul>
+<li>link属于XHTML标签，除了加载CSS外，还能用于定义RSS, 定义rel连接属性等作用；而@import是CSS提供的，只能用于加载CSS;</li>
+</ul>
+<ul>
+<li>页面被加载的时，link会同时被加载，而@import引用的CSS会等到页面被加载完再加载;</li>
+</ul>
+<ul>
+<li>import是CSS2.1 提出的，只在IE5以上才能被识别，而link是XHTML标签，无兼容问题;</li>
+</ul>
+</blockquote>
+<p>9.介绍一下CSS的盒子模型？</p>
+<blockquote>
+<ul>
+<li>有两种， IE 盒子模型、标准 W3C 盒子模型；IE的content部分包含了 border 和 pading;</li>
+</ul>
+<ul>
+<li>盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border).</li>
+</ul>
+</blockquote>
+<p>10.CSS 选择符有哪些？哪些属性可以继承？优先级算法如何计算？ CSS3新增伪类有那些？</p>
+<blockquote>
+<ul>
+<li>id选择器（ # myid）</li>
+</ul>
+<ul>
+<li>类选择器（.myclassname）</li>
+</ul>
+<ul>
+<li>标签选择器（div, h1, p）</li>
+</ul>
+<ul>
+<li>相邻选择器（h1 + p）</li>
+</ul>
+<ul>
+<li>子选择器（ul &gt; li）</li>
+</ul>
+<ul>
+<li>后代选择器（li a）</li>
+</ul>
+<ul>
+<li>通配符选择器（ * ）</li>
+</ul>
+<ul>
+<li>属性选择器（a[rel = “external”]）</li>
+</ul>
+<ul>
+<li>伪类选择器（a: hover, li: nth - child）</li>
+</ul>
+<ul>
+<li>可继承的样式： font-size font-family color, UL LI DL DD DT;</li>
+</ul>
+<ul>
+<li>不可继承的样式：border padding margin width height ;</li>
+</ul>
+<ul>
+<li>优先级就近原则，同权重情况下样式定义最近者为准;</li>
+</ul>
+<ul>
+<li>优先级为:<br>!important &gt; id &gt; class &gt; tag<br>important 比 内联优先级高</li>
+</ul>
+</blockquote>
+<p>11.CSS3有哪些新特性？</p>
+<blockquote>
+<ul>
+<li>CSS3实现圆角（border-radius:8px），阴影（box-shadow:10px），<br>对文字加特效（text-shadow、），线性渐变（gradient），旋转（transform）</li>
+</ul>
+<ul>
+<li>transform:rotate(9deg) scale(0.85,0.90) translate(0px,-30px) skew(-9deg,0deg);//旋转,缩放,定位,倾斜<br>增加了更多的CSS选择器 多背景 rgba</li>
+</ul>
+</blockquote>
+<h3 id="JavaScript面试题"><a href="#JavaScript面试题" class="headerlink" title="JavaScript面试题"></a>JavaScript面试题</h3><p>1.javascript的typeof返回哪些数据类型</p>
+<blockquote>
+<ul>
+<li>Ｏbject number function boolean underfind;</li>
+</ul>
+</blockquote>
+<p>2.例举3种强制类型转换和2种隐式类型转换?</p>
+<blockquote>
+<ul>
+<li>强制（parseInt,parseFloat,number）隐式（== – ===）；</li>
+</ul>
+</blockquote>
+<p>3.数组方法pop() push() unshift() shift()</p>
+<blockquote>
+<ul>
+<li>Push()尾部添加 pop()尾部删除</li>
+</ul>
+<ul>
+<li>Unshift()头部添加 shift()头部删除</li>
+</ul>
+</blockquote>
+<p>4.ajax请求的时候get 和post方式的区别?</p>
+<blockquote>
+<ul>
+<li>一个在url后面 一个放在虚拟载体里面<br>有大小限制</li>
+</ul>
+<ul>
+<li>安全问题<br>应用不同 一个是论坛等只需要请求的，一个是类似修改密码的;</li>
+</ul>
+</blockquote>
+<p>5.call和apply的区别</p>
+<blockquote>
+<ul>
+<li>Object.call(this,obj1,obj2,obj3)</li>
+</ul>
+<ul>
+<li>Object.apply(this,arguments)</li>
+</ul>
+</blockquote>
+<p>6.ajax请求时，如何解释json数据</p>
+<blockquote>
+<ul>
+<li>使用eval parse,鉴于安全性考虑 使用parse更靠谱;</li>
+</ul>
+</blockquote>
+<p>7.事件委托是什么</p>
+<blockquote>
+<ul>
+<li>让利用事件冒泡的原理，让自己的所触发的事件，让他的父元素代替执行！</li>
+</ul>
+</blockquote>
+<p>8.闭包是什么，有什么特性，对页面有什么影响?简要介绍你理解的闭包</p>
+<blockquote>
+<ul>
+<li>闭包就是能够读取其他函数内部变量的函数。</li>
+</ul>
+</blockquote>
+<p>9.添加 删除 替换 插入到某个接点的方法</p>
+<blockquote>
+<p>obj.appendChidl()<br>obj.innersetBefore<br>obj.replaceChild<br>obj.removeChild</p>
+</blockquote>
+<p>10.说一下什么是javascript的同源策略？</p>
+<blockquote>
+<ul>
+<li>一段脚本只能读取来自于同一来源的窗口和文档的属性，这里的同一来源指的是主机名、协议和端口号的组合</li>
+</ul>
+</blockquote>
+<p>11.编写一个b继承a的方法;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function A(name)&#123;</div><div class="line">    this.name = name;</div><div class="line">    this.sayHello = function()&#123;alert(this.name+” say Hello!”);&#125;;</div><div class="line">&#125;</div><div class="line">function B(name,id)&#123;</div><div class="line">    this.temp = A;</div><div class="line">    this.temp(name);        //相当于new A();</div><div class="line">    delete this.temp;</div><div class="line">     this.id = id;</div><div class="line">    this.checkId = function(ID)&#123;alert(this.id==ID)&#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>12.如何阻止事件冒泡和默认事件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function stopBubble(e)</div><div class="line">&#123;</div><div class="line">   if (e &amp;&amp; e.stopPropagation)</div><div class="line">       e.stopPropagation()</div><div class="line">   else</div><div class="line">       window.event.cancelBubble=true</div><div class="line">&#125;</div><div class="line">return false</div></pre></td></tr></table></figure>
+<p>13.下面程序执行后弹出什么样的结果?</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">function fn() &#123;</div><div class="line">    this.a = 0;</div><div class="line">    this.b = function() &#123;</div><div class="line">        alert(this.a)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">fn.prototype = &#123;</div><div class="line">    b: function() &#123;</div><div class="line">        this.a = 20;</div><div class="line">        alert(this.a);</div><div class="line">    &#125;,</div><div class="line">    c: function() &#123;</div><div class="line">        this.a = 30;</div><div class="line">        alert(this.a);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">var myfn = new fn();</div><div class="line">myfn.b();</div><div class="line">myfn.c();</div></pre></td></tr></table></figure>
+<p>14.谈谈This对象的理解。</p>
+<blockquote>
+<p>this是js的一个关键字，随着函数使用场合不同，this的值会发生变化。<br>但是有一个总原则，那就是this指的是调用函数的那个对象。<br>this一般情况下：是全局对象Global。 作为方法调用，那么this就是指这个对象</p>
+</blockquote>
+<p>15.下面程序的结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function fun(n,o) &#123;</div><div class="line">  console.log(o)</div><div class="line">  return &#123;</div><div class="line">    fun:function(m)&#123;</div><div class="line">      return fun(m,n);</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line">var a = fun(0);  a.fun(1);  a.fun(2);  a.fun(3);</div><div class="line">var b = fun(0).fun(1).fun(2).fun(3);</div><div class="line">var c = fun(0).fun(1);  c.fun(2);  c.fun(3);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>//答案：<br>//a: undefined,0,0,0<br>//b: undefined,0,1,2<br>//c: undefined,0,1,1</p>
+</blockquote>
+<p>16.下面程序的输出结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var name = &apos;World!&apos;;</div><div class="line">(function () &#123;</div><div class="line">    if (typeof name === &apos;undefined&apos;) &#123;</div><div class="line">        var name = &apos;Jack&apos;;</div><div class="line">        console.log(&apos;Goodbye &apos; + name);</div><div class="line">    &#125; else &#123;</div><div class="line">        console.log(&apos;Hello &apos; + name);</div><div class="line">    &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<p>17.了解Node么？Node的使用场景都有哪些？</p>
+<blockquote>
+<ul>
+<li>高并发、聊天、实时消息推送</li>
+</ul>
+</blockquote>
+<p>18.介绍下你最常用的一款框架</p>
+<blockquote>
+<ul>
+<li>jquery,rn,angular等;</li>
+</ul>
+</blockquote>
+<p>19.对于前端自动化构建工具有了解吗？简单介绍一下</p>
+<blockquote>
+<ul>
+<li>Gulp,Grunt等；</li>
+</ul>
+</blockquote>
+<p>20.介绍一下你了解的后端语言以及掌握程度</p>
+<h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><p>1.对Node的优点和缺点提出了自己的看法？</p>
+<blockquote>
+<p>(优点）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;  因为Node是基于事件驱动和无阻塞的，所以非常适合处理并发请求，</div><div class="line">&gt;  因此构建在Node上的代理服务器相比其他技术实现（如Ruby）的服务器表现要好得多。</div><div class="line">&gt; 此外，与Node代理服务器交互的客户端代码是由javascript语言编写的，</div><div class="line">&gt; 因此客户端和服务器端都用同一种语言编写，这是非常美妙的事情。</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>（缺点）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;  Node是一个相对新的开源项目，所以不太稳定，它总是一直在变，</div><div class="line">&gt; 而且缺少足够多的第三方库支持。看起来，就像是Ruby/Rails当年的样子。</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>2.你有哪些性能优化的方法？</p>
+<blockquote>
+<p>（1） 减少http请求次数：CSS Sprites, JS、CSS源码压缩、图片大小控制合适；网页Gzip，CDN托管，data缓存 ，图片服务器。<br>（2）前端模板 JS+数据，减少由于HTML标签导致的带宽浪费，前端用变量保存AJAX请求结果，每次操作本地变量，不用请求，减少请求次数<br>（3） 用innerHTML代替DOM操作，减少DOM操作次数，优化javascript性能。<br>（4） 当需要设置的样式很多时设置className而不是直接操作style。<br>（5） 少用全局变量、缓存DOM节点查找的结果。减少IO读取操作。<br>（6） 避免使用CSS Expression（css表达式)又称Dynamic properties(动态属性)。<br>（7） 图片预加载，将样式表放在顶部，将脚本放在底部 加上时间戳。<br>（8） 避免在页面的主体布局中使用table，table要等其中的内容完全下载之后才会显示出来，显示div+css布局慢。对普通的网站有一个统一的思路，就是尽量向前端优化、减少数据库操作、减少磁盘IO。向前端优化指的是，在不影响功能和体验的情况下，能在浏览器执行的不要在服务端执行，能在缓存服务器上直接返回的不要到应用服务器，程序能直接取得的结果不要到外部取得，本机内能取得的数据不要到远程取，内存能取到的不要到磁盘取，缓存中有的不要去数据库查询。减少数据库操作指减少更新次数、缓存结果减少查询次数、将数据库执行的操作尽可能的让你的程序完成（例如join查询），减少磁盘IO指尽量不使用文件系统作为缓存、减少读写文件次数等。程序优化永远要优化慢的部分，换语言是无法“优化”的。</p>
+</blockquote>
+<p>3.http状态码有那些？分别代表是什么意思？</p>
+<blockquote>
+<p>100-199 用于指定客户端应相应的某些动作。<br>200-299 用于表示请求成功。<br>300-399 用于已经移动的文件并且常被包含在定位头信息中指定新的地址信息。<br>400-499 用于指出客户端的错误。400 1、语义有误，当前请求无法被服务器理解。401 当前请求需要用户验证 403 服务器已经理解请求，但是拒绝执行它。<br>500-599 用于支持服务器错误。 503 – 服务不可用</p>
+</blockquote>
+<p>4.一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）</p>
+<blockquote>
+<ul>
+<li>查找浏览器缓存</li>
+</ul>
+<ul>
+<li>DNS解析、查找该域名对应的IP地址、重定向（301）、发出第二个GET请求</li>
+</ul>
+<ul>
+<li>进行HTTP协议会话</li>
+</ul>
+<ul>
+<li>客户端发送报头(请求报头)</li>
+</ul>
+<ul>
+<li>文档开始下载</li>
+</ul>
+<ul>
+<li>文档树建立，根据标记请求所需指定MIME类型的文件</li>
+</ul>
+<ul>
+<li>文件显示</li>
+</ul>
+<ul>
+<li>浏览器这边做的工作大致分为以下几步：</li>
+</ul>
+<ul>
+<li>加载：根据请求的URL进行域名解析，向服务器发起请求，接收文件（HTML、JS、CSS、图象等）。</li>
+</ul>
+<ul>
+<li>解析：对加载到的资源（HTML、JS、CSS等）进行语法解析，建议相应的内部数据结构（比如HTML的DOM树，JS的（对象）属性表，CSS的样式规则等等）</li>
+</ul>
+</blockquote>
+<p>5.你常用的开发工具是什么，为什么？</p>
+<blockquote>
+<ul>
+<li>Sublime,Atom,Nodepad++;</li>
+</ul>
+</blockquote>
+<p>6.说说最近最流行的一些东西吧？常去哪些网站？</p>
+<blockquote>
+<ul>
+<li>Node.js、MVVM、React-native,Angular,Weex等</li>
+</ul>
+<ul>
+<li>CSDN,Segmentfault,博客园,掘金,Stackoverflow等</li>
+</ul>
+</blockquote>
+<p>7.介绍下你的项目（如果有的话）？并说一下在做这个项目中运用的技术以及遇到的难题是如何解决的</p>
+<hr>
+<p>欢迎转载，但转载请注明来自”勿忘初心”的博客，并保持转载后文章内容的完整性。</p>
+<p>本文链接：<a href="http://lucylc.com/InterView/2017/02/24/前端面试题汇总3.html">http://lucylc.com/InterView/2017/02/24/前端面试题汇总3.html</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wxreword.png" alt="RossiLc WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/apli.jpg" alt="RossiLc Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/InterView-Question/" rel="tag"># InterView Question</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/InterView/2017/02/24/前端面试题汇总2.html" rel="next" title="前端面试题汇总2">
+                <i class="fa fa-chevron-left"></i> 前端面试题汇总2
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Mood-Diary/2017/02/24/勿忘初心.html" rel="prev" title="勿忘初心">
+                勿忘初心 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="InterView/2017/02/24/前端面试题汇总3.html"
+           data-title="前端面试题汇总3" data-url="http://lucylc.com/InterView/2017/02/24/前端面试题汇总3.html">
+      </div>
+    
+  </div>
+
+  <center><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="http://music.163.com/outchain/player?type=2&id=28947001&auto=1&height=66"></iframe></center>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/author.jpg"
+               alt="RossiLc" />
+          <p class="site-author-name" itemprop="name">RossiLc</p>
+           
+              <p class="site-description motion-element" itemprop="description">勿忘初心，方得始终。关注前端，分享生活。露西&罗西的博客 lucylc.com</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/rossilc" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/3242984124" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/158108149" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/yang-guang-shao-nian-90-68" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://coding.net/u/Rossi" target="_blank" title="Coding">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Coding
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://es6.ruanyifeng.com/" title="es6中文学习网站" target="_blank">es6中文学习网站</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://lucylc.com/" title="露西&罗西" target="_blank">露西&罗西</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML面试题"><span class="nav-number">1.</span> <span class="nav-text">HTML面试题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS面试题"><span class="nav-number">2.</span> <span class="nav-text">CSS面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#内联元素居中方案"><span class="nav-number">2.1.</span> <span class="nav-text">内联元素居中方案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#块级元素居中方案"><span class="nav-number">2.2.</span> <span class="nav-text">块级元素居中方案</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript面试题"><span class="nav-number">3.</span> <span class="nav-text">JavaScript面试题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其它"><span class="nav-number">4.</span> <span class="nav-text">其它</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">rossilc,露西&罗西</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+    <span class="site-pv">本站总访问量<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"rossilc"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+      $('.search-mask').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $('.search-mask').click(function(e){
+      proceedsearch();
+    });
+  </script>
+
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("T0f5bAOwpwtDWVdyC4rtJDrb-gzGzoHsz", "G7uzBqwfwrT9RDzeDhVdGSaV");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

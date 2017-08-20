@@ -1,0 +1,1588 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Swig," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="勿忘初心" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Swig官网文档经常404打不开，网上Swig模版在前端的中文资料非常少，这里也是 摘录网上的一部分资料，乐于分享的朋友可以留言哦。不过对于想要修改 Hexo-Next博客的朋友，相信看了这篇文章的朋友能够大概知道使用技巧。 后续我也会整理一下Swig模版的基本资料。">
+<meta name="keywords" content="Swig">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端Swig模版快速入门">
+<meta property="og:url" content="http://lucylc.com/技术分享/2017/02/27/swig模版快速入门.html">
+<meta property="og:site_name" content="勿忘初心">
+<meta property="og:description" content="Swig官网文档经常404打不开，网上Swig模版在前端的中文资料非常少，这里也是 摘录网上的一部分资料，乐于分享的朋友可以留言哦。不过对于想要修改 Hexo-Next博客的朋友，相信看了这篇文章的朋友能够大概知道使用技巧。 后续我也会整理一下Swig模版的基本资料。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-20T10:15:40.961Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端Swig模版快速入门">
+<meta name="twitter:description" content="Swig官网文档经常404打不开，网上Swig模版在前端的中文资料非常少，这里也是 摘录网上的一部分资料，乐于分享的朋友可以留言哦。不过对于想要修改 Hexo-Next博客的朋友，相信看了这篇文章的朋友能够大概知道使用技巧。 后续我也会整理一下Swig模版的基本资料。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"always","offset":12,"offset_float":0},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6389090183425295000',
+      author: 'rossilc'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://lucylc.com/技术分享/2017/02/27/swig模版快速入门.html"/>
+
+
+
+
+
+  <title> 前端Swig模版快速入门 | 勿忘初心 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?acf364c088033e66a7139a8ea03eaf63";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">勿忘初心</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">繁忙的工作、生活的琐事遗失最初美好纯洁的自己。勿忘初心，人生若只如初见</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+      <li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+        function c() {
+            var e = document.createElement("link");
+            e.setAttribute("type", "text/css");
+            e.setAttribute("rel", "stylesheet");
+            e.setAttribute("href", f);
+            e.setAttribute("class", l);
+            document.body.appendChild(e)
+        }
+
+        function h() {
+            var e = document.getElementsByClassName(l);
+            for (var t = 0; t < e.length; t++) {
+                document.body.removeChild(e[t])
+            }
+        }
+
+        function p() {
+            var e = document.createElement("div");
+            e.setAttribute("class", a);
+            document.body.appendChild(e);
+            setTimeout(function() {
+                document.body.removeChild(e)
+            }, 100)
+        }
+
+        function d(e) {
+            return {
+                height : e.offsetHeight,
+                width : e.offsetWidth
+            }
+        }
+
+        function v(i) {
+            var s = d(i);
+            return s.height > e && s.height < n && s.width > t && s.width < r
+        }
+
+        function m(e) {
+            var t = e;
+            var n = 0;
+            while (!!t) {
+                n += t.offsetTop;
+                t = t.offsetParent
+            }
+            return n
+        }
+
+        function g() {
+            var e = document.documentElement;
+            if (!!window.innerWidth) {
+                return window.innerHeight
+            } else if (e && !isNaN(e.clientHeight)) {
+                return e.clientHeight
+            }
+            return 0
+        }
+
+        function y() {
+            if (window.pageYOffset) {
+                return window.pageYOffset
+            }
+            return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+        }
+
+        function E(e) {
+            var t = m(e);
+            return t >= w && t <= b + w
+        }
+
+        function S() {
+            var e = document.createElement("audio");
+            e.setAttribute("class", l);
+            e.src = i;
+            e.loop = false;
+            e.addEventListener("canplay", function() {
+                setTimeout(function() {
+                    x(k)
+                }, 500);
+                setTimeout(function() {
+                    N();
+                    p();
+                    for (var e = 0; e < O.length; e++) {
+                        T(O[e])
+                    }
+                }, 15500)
+            }, true);
+            e.addEventListener("ended", function() {
+                N();
+                h()
+            }, true);
+            e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+            document.body.appendChild(e);
+            e.play()
+        }
+
+        function x(e) {
+            e.className += " " + s + " " + o
+        }
+
+        function T(e) {
+            e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+        }
+
+        function N() {
+            var e = document.getElementsByClassName(s);
+            var t = new RegExp("\\b" + s + "\\b");
+            for (var n = 0; n < e.length; ) {
+                e[n].className = e[n].className.replace(t, "")
+            }
+        }
+
+        var e = 30;
+        var t = 30;
+        var n = 350;
+        var r = 350;
+        var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+        var s = "mw-harlem_shake_me";
+        var o = "im_first";
+        var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+        var a = "mw-strobe_light";
+        var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+        var l = "mw_added_css";
+        var b = g();
+        var w = y();
+        var C = document.getElementsByTagName("*");
+        var k = null;
+        for (var L = 0; L < C.length; L++) {
+            var A = C[L];
+            if (v(A)) {
+                if (E(A)) {
+                    k = A;
+                    break
+                }
+            }
+        }
+        if (A === null) {
+            console.warn("Could not find a node of the right size. Please try a different page.");
+            return
+        }
+        c();
+        S();
+        var O = [];
+        for (var L = 0; L < C.length; L++) {
+            var A = C[L];
+            if (v(A)) {
+                O.push(A)
+            }
+        }
+    })()'>High一下</a> </li>
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="search-mask">
+  <div class="popup local-search-popup">
+    <div class="local-search-header clearfix">
+      <span class="search-icon">
+        <i class="fa fa-search"></i>
+      </span>
+      <span class="popup-btn-close">
+        <i class="fa fa-times-circle"></i>
+      </span>
+      <div class="local-search-input-wrapper">
+        <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      </div>
+    </div>
+    <div id="local-search-result"></div>
+  </div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://lucylc.com/技术分享/2017/02/27/swig模版快速入门.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="RossiLc">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/author.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="勿忘初心">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="勿忘初心" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                前端Swig模版快速入门
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-27T08:35:59+08:00">
+                2017-02-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术分享/" itemprop="url" rel="index">
+                    <span itemprop="name">技术分享</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/技术分享/2017/02/27/swig模版快速入门.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="技术分享/2017/02/27/swig模版快速入门.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/技术分享/2017/02/27/swig模版快速入门.html" class="leancloud_visitors" data-flag-title="前端Swig模版快速入门">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>Swig官网文档经常404打不开，网上Swig模版在前端的中文资料非常少，这里也是</p>
+<p>摘录网上的一部分资料，乐于分享的朋友可以留言哦。不过对于想要修改</p>
+<p>Hexo-Next博客的朋友，相信看了这篇文章的朋友能够大概知道使用技巧。</p>
+<p>后续我也会整理一下Swig模版的基本资料。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><h3 id="Swig优点："><a href="#Swig优点：" class="headerlink" title="Swig优点："></a>Swig优点：</h3><ul>
+<li>支持大多数主流浏览器。</li>
+<li>表达式兼容性好。</li>
+<li>面向对象的模板继承。</li>
+<li>将过滤器和转换应用到模板中的输出。</li>
+<li>可根据路劲渲染页面。</li>
+<li>支持页面复用。</li>
+<li>支持动态页面。</li>
+<li>可扩展、可定制。</li>
+</ul>
+<h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">swig.init(&#123;</div><div class="line">  allowErrors: false,</div><div class="line">  autoescape: true,</div><div class="line">  cache: true,</div><div class="line">  encoding: &apos;utf8&apos;,</div><div class="line">  filters: &#123;&#125;,</div><div class="line">  root: &apos;/&apos;,</div><div class="line">  tags: &#123;&#125;,</div><div class="line">  extensions: &#123;&#125;,</div><div class="line">  tzOffset: 0</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>options:</p>
+<blockquote>
+<p><strong>allowErrors</strong>:<br>默认值为 false。将所有模板解析和编译错误直接输出到模板。如果为 true，则将引发错误，抛出到 Node.js 进程中，可能会使您的应用程序崩溃。</p>
+<p><strong>autoescape</strong>:<br>默认true，强烈建议保持。字符转换表请参阅转义过滤器。</p>
+<blockquote>
+<p>true: HTML安全转义<br>false: 不转义，除非使用转义过滤器或者转义标签<br>‘js’: js安全转义</p>
+</blockquote>
+<p><strong>cache</strong>:<br>更改为 false 将重新编译每个请求的模板的文件。正式环境建议保持true。</p>
+<p><strong>encoding</strong><br>模板文件编码</p>
+<p><strong>root</strong><br>需要搜索模板的目录。如果模板传递给 swig.compileFile 绝对路径(以/开头)，Swig不会在模板root中搜索。如果传递一个数组，使用第一个匹配成功的数组项。</p>
+<p><strong>tzOffset</strong><br>设置默认时区偏移量。此设置会使转换日期过滤器会自动的修正相应时区偏移量。</p>
+<p><strong>filters</strong> 自定义过滤器或者重写默认过滤器，参见自定义过滤器指南。</p>
+<p><strong>tags</strong><br>自定义标签或者重写默认标签，参见自定义标签指南。</p>
+<p><strong>extensions</strong> 添加第三方库，可以在编译模板时使用，参见参见自定义标签指南。</p>
+</blockquote>
+<h3 id="nodejs"><a href="#nodejs" class="headerlink" title="nodejs"></a>nodejs</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var tpl = swig.compileFile(&quot;path/to/template/file.html&quot;);</div><div class="line">var renderedHtml = tpl.render(&#123; vars: &apos;to be inserted in template&apos; &#125;);</div></pre></td></tr></table></figure>
+<p>or</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var tpl = swig.compile(&quot;Template string here&quot;);</div><div class="line">var renderedHtml = tpl(&#123; vars: &apos;to be inserted in template&apos; &#125;);</div></pre></td></tr></table></figure>
+<h3 id="结合Express"><a href="#结合Express" class="headerlink" title="结合Express"></a>结合Express</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install express</div><div class="line">npm install consolidate</div></pre></td></tr></table></figure>
+<p>然后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">app.engine(&apos;.html&apos;, cons.swig);</div><div class="line">app.set(&apos;view engine&apos;, &apos;html&apos;);</div></pre></td></tr></table></figure>
+<h3 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h3><p>Swig浏览器版本的api基本与nodejs版相同，不同点如下：</p>
+<ol>
+<li>不能使用swig.compileFile，浏览器没有文件系统</li>
+<li>你必须提前使用swig.compile编译好模板</li>
+<li><p>按顺序使用extends, import, and include，同时在swig.compile里使用参数templateKey来查找模板</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var template = swig.compile(&apos;&lt;p&gt;&#123;% block content %&#125;&#123;% endblock %&#125;&lt;/p&gt;&apos;, &#123; filename: &apos;main&apos; &#125;);</div><div class="line">var mypage = swig.compile(&apos;&#123;% extends &quot;main&quot; %&#125;&#123;% block content %&#125;Oh hey there!&#123;% endblock %&#125;&apos;, &#123; filename: &apos;mypage&apos; &#125;);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&#123;&#123; foo.bar &#125;&#125;</div><div class="line">&#123;&#123; foo[&apos;bar&apos;] &#125;&#125;</div></pre></td></tr></table></figure>
+<p>如果变量未定义，输出空字符。</p>
+<p>变量可以通过过滤器来修改：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&#123;&#123; name|title &#125;&#125; was born on &#123;&#123; birthday|date(&apos;F jS, Y&apos;) &#125;&#125;</div><div class="line">// Jane was born on July 6th, 1985</div></pre></td></tr></table></figure>
+<h3 id="逻辑标签"><a href="#逻辑标签" class="headerlink" title="逻辑标签"></a>逻辑标签</h3><p>参见标签部分。</p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><h3 id="空白"><a href="#空白" class="headerlink" title="空白"></a>空白</h3><p>模板里的空白在最终输出时默认保留，如果需要去掉空白，可以在逻辑标签前后加上空白控制服-：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% for item in seq -%&#125;</div><div class="line">    &#123;&#123; item &#125;&#125;</div><div class="line">&#123;%- endfor %&#125;</div></pre></td></tr></table></figure>
+<h2 id="模板继承"><a href="#模板继承" class="headerlink" title="模板继承"></a>模板继承</h2><p>Swig 使用 extends 和 block 来实现模板继承</p>
+<p><strong>layout.html</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;!doctype html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;</div><div class="line">    &lt;title&gt;&#123;% block title %&#125;My Site&#123;% endblock %&#125;&lt;/title&gt;</div><div class="line"></div><div class="line">    &#123;% block head %&#125;</div><div class="line">        &lt;link rel=&quot;stylesheet&quot; href=&quot;main.css&quot;&gt;</div><div class="line">    &#123;% endblock %&#125;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &#123;% block content %&#125;&#123;% endblock %&#125;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p><strong>index.html</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;% extends &apos;layout.html&apos; %&#125;</div><div class="line"></div><div class="line">&#123;% block title %&#125;My Page&#123;% endblock %&#125;</div><div class="line"></div><div class="line">&#123;% block head %&#125;</div><div class="line">&#123;% parent %&#125;</div><div class="line">    &lt;link rel=&quot;stylesheet&quot; href=&quot;custom.css&quot;&gt;</div><div class="line">&#123;% endblock %&#125;</div><div class="line"></div><div class="line">&#123;% block content %&#125;</div><div class="line">    &lt;p&gt;This is just an awesome page.&lt;/p&gt;</div><div class="line">&#123;% endblock %&#125;</div></pre></td></tr></table></figure>
+<h2 id="变量过滤器"><a href="#变量过滤器" class="headerlink" title="变量过滤器"></a>变量过滤器</h2><p>用于修改变量。变量名称后用 | 字符分隔添加过滤器。您可以添加多个过滤器。</p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&#123;&#123; name|title &#125;&#125; was born on &#123;&#123; birthday|date(&apos;F jS, Y&apos;) &#125;&#125;</div><div class="line">and has &#123;&#123; bikes|length|default(&quot;zero&quot;) &#125;&#125; bikes.</div></pre></td></tr></table></figure>
+<p>也可以使用 filter 标签来为块内容添加过滤器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% filter upper %&#125;oh hi, paul&#123;% endfilter %&#125;</div></pre></td></tr></table></figure>
+<h3 id="内置过滤器"><a href="#内置过滤器" class="headerlink" title="内置过滤器"></a>内置过滤器</h3><blockquote>
+<p><strong>add(value)</strong><br>使变量与value相加，可以转换为数值字符串会自动转换为数值。</p>
+<p><strong>addslashes</strong><br>用 \ 转义字符串</p>
+<p><strong>capitalize</strong><br>大写首字母</p>
+<p><strong>date(format[, tzOffset])</strong><br>转换日期为指定格式</p>
+<blockquote>
+<p>format： 格式<br>tzOffset： 时区</p>
+</blockquote>
+<p><strong>default(value)</strong><br>默认值（如果变量为undefined，null，false）</p>
+<p><strong>e</strong><br>同escape</p>
+<p><strong>escape([type])</strong><br>转义字符</p>
+<blockquote>
+<p>默认： &amp;, &lt;, &gt;, “, ‘<br>js: &amp;, &lt;, &gt;, “, ‘, =, -, ;</p>
+</blockquote>
+<p><strong>first</strong><br>返回数组第一个值</p>
+<p><strong>join(glue)</strong><br>同[].join</p>
+<p><strong>json_encode([indent])</strong><br>类似JSON.stringify, indent为缩进空格数</p>
+<p><strong>last</strong><br>返回数组最后一个值</p>
+<p><strong>length</strong><br>返回变量的length，如果是object，返回key的数量</p>
+<p><strong>lower</strong><br>同’’.toLowerCase()</p>
+<p><strong>raw</strong><br>指定输入不会被转义</p>
+<p><strong>replace(search, replace[, flags])</strong><br>同’’.replace</p>
+<p><strong>reverse</strong><br>翻转数组</p>
+<p><strong>striptags</strong><br>去除html/xml标签</p>
+<p><strong>title</strong><br>大写首字母</p>
+<p><strong>uniq</strong><br>数组去重</p>
+<p><strong>upper</strong><br>同’’.toUpperCase</p>
+<p><strong>url_encode</strong><br>同encodeURIComponent</p>
+<p><strong>url_decode</strong><br>同decodeURIComponemt</p>
+</blockquote>
+<h3 id="自定义过滤器"><a href="#自定义过滤器" class="headerlink" title="自定义过滤器"></a>自定义过滤器</h3><p>创建一个 myfilter.js 然后引入到 Swig 的初始化函数中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">swig.init(&#123; filters: require(&apos;myfilters&apos;) &#125;);</div></pre></td></tr></table></figure>
+<p>在 myfilter.js 里，每一个 filter 方法都是一个简单的 js 方法，下例是一个翻转字符串的 filter：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">exports.myfilter = function (input) &#123;</div><div class="line">    return input.toString().split(&apos;&apos;).reverse().join(&apos;&apos;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>你的 filter 一旦被引入，你就可以向下面一样使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;&#123; name|myfilter &#125;&#125;</div><div class="line"></div><div class="line">&#123;% filter myfilter %&#125;I shall be filtered&#123;% endfilter %&#125;</div></pre></td></tr></table></figure>
+<p>你也可以像下面一样给 filter 传参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">exports.prefix = function(input, prefix) &#123;</div><div class="line">    return prefix.toString() + input.toString();</div><div class="line">&#125;;</div><div class="line"></div><div class="line">&#123;&#123; name|prefix(&apos;my prefix&apos;) &#125;&#125;</div><div class="line"></div><div class="line">&#123;% filter prefix &apos;my prefix&apos; %&#125;I will be prefixed with &quot;my prefix&quot;.&#123;% endfilter %&#125;</div><div class="line">&#123;% filter prefix foo %&#125;I will be prefixed with the value stored to `foo`.&#123;% endfilter %&#125;</div></pre></td></tr></table></figure>
+<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><h3 id="内置标签"><a href="#内置标签" class="headerlink" title="内置标签"></a>内置标签</h3><blockquote>
+<p><strong>extends</strong><br>使当前模板继承父模板，必须在文件最前</p>
+<blockquote>
+<p>参数：<br>file:<br>父模板相对模板 root 的相对路径</p>
+</blockquote>
+<p><strong>block</strong><br>定义一个块，使之可以被继承的模板重写，或者重写父模板的同名块</p>
+<blockquote>
+<p>参数：<br>name:<br>块的名字，必须以字母数字下划线开头</p>
+</blockquote>
+<p><strong>parent</strong><br>将父模板中同名块注入当前块中</p>
+<p><strong>include</strong><br>包含一个模板到当前位置，这个模板将使用当前上下文</p>
+<blockquote>
+<p>参数：<br>file:<br>包含模板相对模板 root 的相对路径<br>ignore missing:<br>包含模板不存在也不会报错<br>with x:<br>设置 x 至根上下文对象以传递给模板生成。必须是一个键值对<br>only:<br>限制模板上下文中用 with x 定义的参数</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt; &#123;% include template_path %&#125;</div><div class="line">&gt; &#123;% include &quot;path/to/template.js&quot; %&#125;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>你可以标记 ignore missing，这样如果模板不存在，也不会抛出错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; &#123;% include &quot;foobar.html&quot; ignore missing %&#125;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>本地声明的上下文变量，默认情况不会传递给包含的模板。例如以下情况，inc.html 无法得到 foo 和 bar</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt; &#123;% set foo = &quot;bar&quot; %&#125;</div><div class="line">&gt; &#123;% include &quot;inc.html&quot; %&#125;</div><div class="line">&gt;</div><div class="line">&gt; &#123;% for bar in thing %&#125;</div><div class="line">&gt;     &#123;% include &quot;inc.html&quot; %&#125;</div><div class="line">&gt; &#123;% endfor %&#125;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>如果想把本地声明的变量引入到包含的模板种，可以使用 with 参数来把后面的对象创建到包含模板的上下文中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt; &#123;% set foo = &#123; bar: &quot;baz&quot; &#125; %&#125;</div><div class="line">&gt; &#123;% include &quot;inc.html&quot; with foo %&#125;</div><div class="line">&gt;</div><div class="line">&gt; &#123;% for bar in thing %&#125;</div><div class="line">&gt;     &#123;% include &quot;inc.html&quot; with bar %&#125;</div><div class="line">&gt; &#123;% endfor %&#125;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>如果当前上下文中 foo 和 bar 可用，下面的情况中，只有 foo 会被 inc.html 定义</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; &#123;% include &quot;inc.html&quot; with foo only %&#125;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>only 必须作为最后一个参数，放在其他位置会被忽略</p>
+<p><strong>raw</strong><br>停止解析标记中任何内容，所有内容都将输出</p>
+<blockquote>
+<p>参数：<br>file:<br>父模板相对模板 root 的相对路径</p>
+</blockquote>
+<p><strong>for</strong><br>遍历对象和数组</p>
+<blockquote>
+<p>参数：<br>x:<br>当前循环迭代名<br>in:<br>语法标记<br>y:<br>可迭代对象。可以使用过滤器修改</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&gt; &#123;% for x in y %&#125;</div><div class="line">&gt;     &#123;% if loop.first %&#125;&lt;ul&gt;&#123;% endif %&#125;</div><div class="line">&gt;     &lt;li&gt;&#123;&#123; loop.index &#125;&#125; - &#123;&#123; loop.key &#125;&#125;: &#123;&#123; x &#125;&#125;&lt;/li&gt;</div><div class="line">&gt;     &#123;% if loop.last %&#125;&lt;/ul&gt;&#123;% endif %&#125;</div><div class="line">&gt; &#123;% endfor %&#125;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<blockquote>
+<p>特殊循环变量<br>loop.index：当前循环的索引（1开始）<br>loop.index0：当前循环的索引（0开始）<br>loop.revindex：当前循环从结尾开始的索引（1开始）<br>loop.revindex0：当前循环从结尾开始的索引（0开始）<br>loop.key：如果迭代是对象，是当前循环的键，否则同 loop.index<br>loop.first：如果是第一个值返回 true<br>loop.last：如果是最后一个值返回 true<br>loop.cycle：一个帮助函数，以指定的参数作为周期</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt; &#123;% for item in items %&#125;</div><div class="line">&gt;     &lt;li class=&quot;&#123;&#123; loop.cycle(&apos;odd&apos;, &apos;even&apos;) &#125;&#125;&quot;&gt;&#123;&#123; item &#125;&#125;&lt;/li&gt;</div><div class="line">&gt; &#123;% endfor %&#125;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>在 for 标签里使用 else</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&gt; &#123;% for person in people %&#125;</div><div class="line">&gt;     &#123;&#123; person &#125;&#125;</div><div class="line">&gt; &#123;% else %&#125;</div><div class="line">&gt;     There are no people yet!</div><div class="line">&gt; &#123;% endfor %&#125;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p><strong>if</strong><br>条件语句</p>
+<blockquote>
+<p>参数：<br>…:<br>接受任何有效的 JavaScript 条件语句，以及一些其他人类可读语法</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&gt; &#123;% if x %&#125;&#123;% endif %&#125;</div><div class="line">&gt; &#123;% if !x %&#125;&#123;% endif %&#125;</div><div class="line">&gt; &#123;% if not x %&#125;&#123;% endif %&#125;</div><div class="line">&gt;</div><div class="line">&gt; &#123;% if x and y %&#125;&#123;% endif %&#125;</div><div class="line">&gt; &#123;% if x &amp;&amp; y %&#125;&#123;% endif %&#125;</div><div class="line">&gt; &#123;% if x or y %&#125;&#123;% endif %&#125;</div><div class="line">&gt; &#123;% if x || y %&#125;&#123;% endif %&#125;</div><div class="line">&gt; &#123;% if x || (y &amp;&amp; z) %&#125;&#123;% endif %&#125;</div><div class="line">&gt;</div><div class="line">&gt; &#123;% if x [operator] y %&#125;</div><div class="line">&gt;     Operators: ==, !=, &lt;, &lt;=, &gt;, &gt;=, ===, !==</div><div class="line">&gt; &#123;% endif %&#125;</div><div class="line">&gt;</div><div class="line">&gt; &#123;% if x == &apos;five&apos; %&#125;</div><div class="line">&gt;     The operands can be also be string or number literals</div><div class="line">&gt; &#123;% endif %&#125;</div><div class="line">&gt;</div><div class="line">&gt; &#123;% if x|length === 3 %&#125;</div><div class="line">&gt;     You can use filters on any operand in the statement.</div><div class="line">&gt; &#123;% endif %&#125;</div><div class="line">&gt;</div><div class="line">&gt; &#123;% if x in y %&#125;</div><div class="line">&gt;     If x is a value that is present in y, this will return true.</div><div class="line">&gt; &#123;% endif %&#125;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>else 和 else if</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&gt; &#123;% if foo %&#125;</div><div class="line">&gt;     Some content.</div><div class="line">&gt; &#123;% else if &quot;foo&quot; in bar %&#125;</div><div class="line">&gt;     Content if the array `bar` has &quot;foo&quot; in it.</div><div class="line">&gt; &#123;% else %&#125;</div><div class="line">&gt;     Fallback content.</div><div class="line">&gt; &#123;% endif %&#125;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p><strong>autoescape</strong><br>改变当前变量的自动转义行为</p>
+<blockquote>
+<p>参数：<br>on:<br>当前内容是否转义<br>type:<br>转义类型，js 或者 html，默认 html</p>
+</blockquote>
+<p>假设</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; some_html_output = &apos;&lt;p&gt;Hello &quot;you&quot; &amp; \&apos;them\&apos;&lt;/p&gt;&apos;;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>然后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&gt; &#123;% autoescape false %&#125;</div><div class="line">&gt;     &#123;&#123; some_html_output &#125;&#125;</div><div class="line">&gt; &#123;% endautoescape %&#125;</div><div class="line">&gt;</div><div class="line">&gt; &#123;% autoescape true %&#125;</div><div class="line">&gt;     &#123;&#123; some_html_output &#125;&#125;</div><div class="line">&gt; &#123;% endautoescape %&#125;</div><div class="line">&gt;</div><div class="line">&gt; &#123;% autoescape true &quot;js&quot; %&#125;</div><div class="line">&gt;     &#123;&#123; some_html_output &#125;&#125;</div><div class="line">&gt; &#123;% endautoescape %&#125;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>将会输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&gt; &lt;p&gt;Hello &quot;you&quot; &amp; &apos;them&apos;&lt;/p&gt;</div><div class="line">&gt;</div><div class="line">&gt; &amp;lt;p&amp;gt;Hello &amp;quot;you&amp;quot; &amp;amp; &amp;#39;them&amp;#39; &amp;lt;/p&amp;gt;</div><div class="line">&gt;</div><div class="line">&gt; \u003Cp\u003EHello \u0022you\u0022 &amp; \u0027them\u0027\u003C\u005Cp\u003E</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p><strong>set</strong><br>设置一个变量，在当前上下文中复用</p>
+<blockquote>
+<p>参数：<br>name:<br>变量名<br>=:<br>语法标记<br>value:<br>变量值</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt; &#123;% set foo = [0, 1, 2, 3, 4, 5] %&#125;</div><div class="line">&gt; &#123;% for num in foo %&#125;</div><div class="line">&gt;     &lt;li&gt;&#123;&#123; num &#125;&#125;&lt;/li&gt;</div><div class="line">&gt; &#123;% endfor %&#125;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p><strong>macro</strong><br>创建自定义可服用的代码段</p>
+<blockquote>
+<p>参数：<br>…:<br>用户定义</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt; &#123;% macro input type name id label value error %&#125;</div><div class="line">&gt; &lt;label for=&quot;&#123;&#123; name &#125;&#125;&quot;&gt;&#123;&#123; label &#125;&#125;&lt;/label&gt;</div><div class="line">&gt; &lt;input type=&quot;&#123;&#123; type &#125;&#125;&quot; name=&quot;&#123;&#123; name &#125;&#125;&quot; id=&quot;&#123;&#123; id &#125;&#125;&quot; value=&quot;&#123;&#123; value &#125;&#125;&quot;&#123;% if error %&#125; class=&quot;error&quot;&#123;% endif %&#125;&gt;</div><div class="line">&gt; &#123;% endmacro %&#125;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>然后像下面使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt; &lt;div&gt;&#123;&#123; input(&quot;text&quot;, &quot;fname&quot;, &quot;fname&quot;, &quot;First Name&quot;, fname.value, fname.errors) &#125;&#125;&lt;/div&gt;</div><div class="line">&gt; &lt;div&gt;&#123;&#123; input(&quot;text&quot;, &quot;lname&quot;, &quot;lname&quot;, &quot;Last Name&quot;, lname.value, lname.errors) &#125;&#125;&lt;/div&gt;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>输出如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&gt; &lt;div&gt;</div><div class="line">&gt;     &lt;label for=&quot;fname&quot;&gt;First Name&lt;/label&gt;</div><div class="line">&gt;     &lt;input type=&quot;text&quot; name=&quot;fname&quot; id=&quot;fname&quot; value=&quot;Paul&quot;&gt;</div><div class="line">&gt; &lt;/div&gt;</div><div class="line">&gt; &lt;div&gt;</div><div class="line">&gt;     &lt;label for=&quot;lname&quot;&gt;Last Name&lt;/label&gt;</div><div class="line">&gt;     &lt;input type=&quot;text&quot; name=&quot;lname&quot; id=&quot;lname&quot; value=&quot;&quot; class=&quot;error&quot;&gt;</div><div class="line">&gt; &lt;/div&gt;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p><strong>import</strong><br>允许引入另一个模板的宏进入当前上下文</p>
+<blockquote>
+<p>参数：<br>file:<br>引入模板相对模板 root 的相对路径<br>as:<br>语法标记 var: 分配给宏的可访问上下文对象</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&gt; &#123;% import &apos;formmacros.html&apos; as form %&#125;</div><div class="line">&gt;</div><div class="line">&gt; &#123;# this will run the input macro #&#125;</div><div class="line">&gt; &#123;&#123; form.input(&quot;text&quot;, &quot;name&quot;) &#125;&#125;</div><div class="line">&gt;</div><div class="line">&gt; &#123;# this, however, will NOT output anything because the macro is scoped to the &quot;form&quot; object: #&#125;</div><div class="line">&gt; &#123;&#123; input(&quot;text&quot;, &quot;name&quot;) &#125;&#125;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p><strong>filter</strong><br>对整个块应用过滤器</p>
+<blockquote>
+<p>参数：<br>filter_name:<br>过滤器名字 … :<br>若干传给过滤器的参数 父模板相对模板 root 的相对路径</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt; &#123;% filter uppercase %&#125;oh hi, &#123;&#123; name &#125;&#125;&#123;% endfilter %&#125;</div><div class="line">&gt; &#123;% filter replace &quot;.&quot; &quot;!&quot; &quot;g&quot; %&#125;Hi. My name is Paul.&#123;% endfilter %&#125;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt; OH HI, PAUL</div><div class="line">&gt; Hi! My name is Paul!</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p><strong>spaceless</strong><br>尝试移除html标签间的空格</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&gt; &#123;% spaceless %&#125;</div><div class="line">&gt; &#123;% for num in foo %&#125;</div><div class="line">&gt;     &lt;li&gt;&#123;&#123; loop.index &#125;&#125;&lt;/li&gt;</div><div class="line">&gt; &#123;% endfor %&#125;</div><div class="line">&gt; &#123;% endspaceless %&#125;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; &lt;li&gt;1&lt;/li&gt;&lt;li&gt;2&lt;/li&gt;&lt;li&gt;3&lt;/li&gt;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>** 不满足于此吗？想知道详细资料的请您移步<a href="https://github.com/paularmstrong/swig" target="_blank" rel="external">Github</a>。</p>
+<hr>
+<p>欢迎转载，但转载请注明来自”勿忘初心”的博客，并保持转载后文章内容的完整性。</p>
+<p>本文链接：<a href="http://lucylc.com/技术分享/2017/02/27/swig模版快速入门.html">http://lucylc.com/技术分享/2017/02/27/swig模版快速入门.html</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wxreword.png" alt="RossiLc WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/apli.jpg" alt="RossiLc Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Swig/" rel="tag"># Swig</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Mood-Diary/2017/02/24/勿忘初心.html" rel="next" title="勿忘初心">
+                <i class="fa fa-chevron-left"></i> 勿忘初心
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Mobile/2017/02/28/移动端兼容性问题收集.html" rel="prev" title="移动端兼容性解决方案汇总">
+                移动端兼容性解决方案汇总 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="技术分享/2017/02/27/swig模版快速入门.html"
+           data-title="前端Swig模版快速入门" data-url="http://lucylc.com/技术分享/2017/02/27/swig模版快速入门.html">
+      </div>
+    
+  </div>
+
+  <center><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="http://music.163.com/outchain/player?type=2&id=28947001&auto=1&height=66"></iframe></center>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/author.jpg"
+               alt="RossiLc" />
+          <p class="site-author-name" itemprop="name">RossiLc</p>
+           
+              <p class="site-description motion-element" itemprop="description">勿忘初心，方得始终。关注前端，分享生活。露西&罗西的博客 lucylc.com</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/rossilc" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/3242984124" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/158108149" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/yang-guang-shao-nian-90-68" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://coding.net/u/Rossi" target="_blank" title="Coding">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Coding
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://es6.ruanyifeng.com/" title="es6中文学习网站" target="_blank">es6中文学习网站</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://lucylc.com/" title="露西&罗西" target="_blank">露西&罗西</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用"><span class="nav-number">1.</span> <span class="nav-text">如何使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Swig优点："><span class="nav-number">1.1.</span> <span class="nav-text">Swig优点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#API"><span class="nav-number">1.2.</span> <span class="nav-text">API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nodejs"><span class="nav-number">1.3.</span> <span class="nav-text">nodejs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结合Express"><span class="nav-number">1.4.</span> <span class="nav-text">结合Express</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器"><span class="nav-number">1.5.</span> <span class="nav-text">浏览器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础"><span class="nav-number">2.</span> <span class="nav-text">基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">2.1.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑标签"><span class="nav-number">2.2.</span> <span class="nav-text">逻辑标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注释"><span class="nav-number">2.3.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空白"><span class="nav-number">2.4.</span> <span class="nav-text">空白</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模板继承"><span class="nav-number">3.</span> <span class="nav-text">模板继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量过滤器"><span class="nav-number">4.</span> <span class="nav-text">变量过滤器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例子"><span class="nav-number">4.1.</span> <span class="nav-text">例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内置过滤器"><span class="nav-number">4.2.</span> <span class="nav-text">内置过滤器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义过滤器"><span class="nav-number">4.3.</span> <span class="nav-text">自定义过滤器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标签"><span class="nav-number">5.</span> <span class="nav-text">标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内置标签"><span class="nav-number">5.1.</span> <span class="nav-text">内置标签</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">rossilc,露西&罗西</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+    <span class="site-pv">本站总访问量<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"rossilc"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+      $('.search-mask').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $('.search-mask').click(function(e){
+      proceedsearch();
+    });
+  </script>
+
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("T0f5bAOwpwtDWVdyC4rtJDrb-gzGzoHsz", "G7uzBqwfwrT9RDzeDhVdGSaV");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

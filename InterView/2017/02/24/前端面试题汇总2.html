@@ -1,0 +1,1626 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="InterView Question," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="勿忘初心" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="前端面试题汇，总持续更新中">
+<meta name="keywords" content="InterView Question">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端面试题汇总2">
+<meta property="og:url" content="http://lucylc.com/InterView/2017/02/24/前端面试题汇总2.html">
+<meta property="og:site_name" content="勿忘初心">
+<meta property="og:description" content="前端面试题汇，总持续更新中">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-20T10:15:40.967Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端面试题汇总2">
+<meta name="twitter:description" content="前端面试题汇，总持续更新中">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"always","offset":12,"offset_float":0},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6389090183425295000',
+      author: 'rossilc'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://lucylc.com/InterView/2017/02/24/前端面试题汇总2.html"/>
+
+
+
+
+
+  <title> 前端面试题汇总2 | 勿忘初心 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?acf364c088033e66a7139a8ea03eaf63";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">勿忘初心</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">繁忙的工作、生活的琐事遗失最初美好纯洁的自己。勿忘初心，人生若只如初见</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+      <li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+        function c() {
+            var e = document.createElement("link");
+            e.setAttribute("type", "text/css");
+            e.setAttribute("rel", "stylesheet");
+            e.setAttribute("href", f);
+            e.setAttribute("class", l);
+            document.body.appendChild(e)
+        }
+
+        function h() {
+            var e = document.getElementsByClassName(l);
+            for (var t = 0; t < e.length; t++) {
+                document.body.removeChild(e[t])
+            }
+        }
+
+        function p() {
+            var e = document.createElement("div");
+            e.setAttribute("class", a);
+            document.body.appendChild(e);
+            setTimeout(function() {
+                document.body.removeChild(e)
+            }, 100)
+        }
+
+        function d(e) {
+            return {
+                height : e.offsetHeight,
+                width : e.offsetWidth
+            }
+        }
+
+        function v(i) {
+            var s = d(i);
+            return s.height > e && s.height < n && s.width > t && s.width < r
+        }
+
+        function m(e) {
+            var t = e;
+            var n = 0;
+            while (!!t) {
+                n += t.offsetTop;
+                t = t.offsetParent
+            }
+            return n
+        }
+
+        function g() {
+            var e = document.documentElement;
+            if (!!window.innerWidth) {
+                return window.innerHeight
+            } else if (e && !isNaN(e.clientHeight)) {
+                return e.clientHeight
+            }
+            return 0
+        }
+
+        function y() {
+            if (window.pageYOffset) {
+                return window.pageYOffset
+            }
+            return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+        }
+
+        function E(e) {
+            var t = m(e);
+            return t >= w && t <= b + w
+        }
+
+        function S() {
+            var e = document.createElement("audio");
+            e.setAttribute("class", l);
+            e.src = i;
+            e.loop = false;
+            e.addEventListener("canplay", function() {
+                setTimeout(function() {
+                    x(k)
+                }, 500);
+                setTimeout(function() {
+                    N();
+                    p();
+                    for (var e = 0; e < O.length; e++) {
+                        T(O[e])
+                    }
+                }, 15500)
+            }, true);
+            e.addEventListener("ended", function() {
+                N();
+                h()
+            }, true);
+            e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+            document.body.appendChild(e);
+            e.play()
+        }
+
+        function x(e) {
+            e.className += " " + s + " " + o
+        }
+
+        function T(e) {
+            e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+        }
+
+        function N() {
+            var e = document.getElementsByClassName(s);
+            var t = new RegExp("\\b" + s + "\\b");
+            for (var n = 0; n < e.length; ) {
+                e[n].className = e[n].className.replace(t, "")
+            }
+        }
+
+        var e = 30;
+        var t = 30;
+        var n = 350;
+        var r = 350;
+        var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+        var s = "mw-harlem_shake_me";
+        var o = "im_first";
+        var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+        var a = "mw-strobe_light";
+        var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+        var l = "mw_added_css";
+        var b = g();
+        var w = y();
+        var C = document.getElementsByTagName("*");
+        var k = null;
+        for (var L = 0; L < C.length; L++) {
+            var A = C[L];
+            if (v(A)) {
+                if (E(A)) {
+                    k = A;
+                    break
+                }
+            }
+        }
+        if (A === null) {
+            console.warn("Could not find a node of the right size. Please try a different page.");
+            return
+        }
+        c();
+        S();
+        var O = [];
+        for (var L = 0; L < C.length; L++) {
+            var A = C[L];
+            if (v(A)) {
+                O.push(A)
+            }
+        }
+    })()'>High一下</a> </li>
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="search-mask">
+  <div class="popup local-search-popup">
+    <div class="local-search-header clearfix">
+      <span class="search-icon">
+        <i class="fa fa-search"></i>
+      </span>
+      <span class="popup-btn-close">
+        <i class="fa fa-times-circle"></i>
+      </span>
+      <div class="local-search-input-wrapper">
+        <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      </div>
+    </div>
+    <div id="local-search-result"></div>
+  </div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://lucylc.com/InterView/2017/02/24/前端面试题汇总2.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="RossiLc">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/author.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="勿忘初心">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="勿忘初心" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                前端面试题汇总2
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-24T10:08:53+08:00">
+                2017-02-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/InterView/" itemprop="url" rel="index">
+                    <span itemprop="name">InterView</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/InterView/2017/02/24/前端面试题汇总2.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="InterView/2017/02/24/前端面试题汇总2.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/InterView/2017/02/24/前端面试题汇总2.html" class="leancloud_visitors" data-flag-title="前端面试题汇总2">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  前端面试题汇，总持续更新中
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <a id="more"></a>
+<h3 id="『HTML-amp-CSS基础』"><a href="#『HTML-amp-CSS基础』" class="headerlink" title="『HTML&amp;CSS基础』"></a>『HTML&amp;CSS基础』</h3><h4 id="【HTML】"><a href="#【HTML】" class="headerlink" title="【HTML】"></a>【HTML】</h4><ul>
+<li><p><strong>行内元素</strong><br>关注行内置换元素 类似inline-block方式展现 input textarea img select</p>
+</li>
+<li><p><strong>浏览器内核</strong><br>基于Webkit：<br>Chrome - blink、腾讯X5、UC U3、华为T9<br>基于Gecko：Firefox<br>基于Trident：IE<br>基于Presto：Opera<br>兼备Webkit&amp;Trident：猎豹、360</p>
+</li>
+<li><p><strong>W3C标准</strong><br>包括结构(xhtml,xml)、表现(css)、行为(ecmascript、dom)的标准。更好地规范浏览器对页面渲染，使得同一套网页方案尽可能在多套浏览器中表现一致。提高开发者开发效率和用户体验</p>
+</li>
+<li><p><strong>Doctype</strong><br>用来告诉浏览器以什么文档类型解析html，没有的话，会按照向下兼容的怪异模式对文档进行解析<br>h4及以下需要引用dtd声明，dtd有标准型和过渡型两种。两者区别可忽略<br>h5不急于SGML标准，因此不需要引用dtd</p>
+</li>
+<li><p><strong>标签语义化的重要性</strong><br>1.便于浏览器、搜索引擎解析<br>2.在没css情况也以一种文档形式展现，便于阅读<br>3.有利于SEO<br>4.有利于代码的阅读和维护</p>
+</li>
+<li><p><strong>strong与em的异同</strong><br>同：都是对文本起强调作用<br>异：em以斜体显示文本，strong更利于SEO识别语义</p>
+</li>
+<li><p><strong>SEO</strong> <a href="https://segmentfault.com/a/1190000002549587" target="_blank" rel="external">详细</a><br>可分为白帽SEO和黑帽SEO<br>SEO的主要方面：<br>1.网站标题、关键字、描述 (meta)<br>2.网站结构布局优化：目录层级不要太多，尽量让Spider跳转3次就可以到达网站的任意一个内页<br>3.网站代码优化：<br>SEO会过滤掉display none的元素、利用<code>&lt;meta description</code>和<code>&lt;meta keywords&gt;</code>、html语义化</p>
+</li>
+<li><p><strong>图片格式</strong><br>png-8 256色、png-24、gif、apng(Chrome不支持)、svg、webp(ios不支持)</p>
+</li>
+<li><p><strong>link vs @import</strong><br>区别：<br>1.link无兼容性缺点，@import仅兼容IE5+<br>2.link权重高于import<br>3.link外链的css与html是并行加载的，而import需等html加载完才加载</p>
+</li>
+</ul>
+<h4 id="【CSS】"><a href="#【CSS】" class="headerlink" title="【CSS】"></a>【CSS】</h4><ul>
+<li><p><strong>CSS盒模型</strong><br>包括 margin padding border content<br>IE盒模型 (lt IE8)：content包含padding和border<br>如何改变：<code>box-sizing</code></p>
+</li>
+<li><p><strong>CSS可继承属性</strong><br>与font有关的属性 如<code>font-size</code>、<code>font-family</code>、<code>font-weight</code>等<br><code>line-height</code>、<code>color</code>、<code>text-align</code>、<code>text-indent</code>等</p>
+</li>
+<li><p><strong>BFC</strong><br>不同的display会参与不同的环境(formatting context)去渲染，而block参与BFC<br>BFC特点<br>1.同个BFC内盒子产生margin塌陷<br>2.计算BFC的高度时，考虑BFC所包含的所有元素，连浮动元素也参与计算<br>3.BFC就是页面上的一个隔离的独立容器，里外互相不影响<br>产生新BFC<br>1.<code>float</code>属性不为<code>none</code><br>2.<code>position</code>为<code>absolute</code>或<code>fixed</code><br>3.<code>display</code>为<code>inline-block | table-cell | table-caption | flex | inline-flex</code><br>4.<code>overflow</code>不为<code>visible</code></p>
+</li>
+<li><p><strong>清除浮动</strong><br>1.形成新的BFC<br>2.新增div 设置<code>clear:both</code><br>3.在父元素添加:after伪类，设置<code>content:&quot;&quot;;display:block;clear:both;zoom:1</code></p>
+</li>
+<li><p><strong>position</strong><br><code>absolute | relative | static | sticky | fixed</code></p>
+</li>
+</ul>
+<hr>
+<h3 id="『HTML5』"><a href="#『HTML5』" class="headerlink" title="『HTML5』"></a>『HTML5』</h3><h4 id="【新标签】"><a href="#【新标签】" class="headerlink" title="【新标签】"></a>【新标签】</h4><ul>
+<li><p><strong>新增的标签</strong><br>1.布局，内容 <code>&lt;header&gt; &lt;section&gt; &lt;nav&gt; &lt;article&gt; &lt;aside&gt; &lt;mark&gt; &lt;footer&gt;</code><br>2.表单 <code>&lt;datalist&gt; &lt;keygen&gt; &lt;output&gt;</code><br>3.媒体 <code>&lt;canvas&gt; &lt;video&gt; &lt;audio&gt; &lt;figure&gt; &lt;figcaption&gt; &lt;source&gt;</code><br>4.状态 <code>&lt;progress&gt; &lt;meter&gt;</code><br>5.冷门 <code>&lt;command&gt; &lt;details&gt; &lt;summary&gt;</code></p>
+</li>
+<li><p><strong>表单新类型</strong><br>email url number tel search color DatePicker</p>
+</li>
+<li><p><strong>表单新属性</strong><br>autocomplete autofocus require pattern placeholder multiple</p>
+</li>
+</ul>
+<h4 id="【新API】"><a href="#【新API】" class="headerlink" title="【新API】"></a>【新API】</h4><ul>
+<li><p><strong>交互</strong><br>重力感应 DeviceOrientation<br>手机加速传感器 DeviceMotion</p>
+</li>
+<li><p><strong>history</strong> <a href="https://segmentfault.com/a/1190000002920768" target="_blank" rel="external">详细</a><br>以Pjax方式实现SPA history.pushState history.replaceState 解决ajax不能后退前进问题</p>
+</li>
+<li><p><strong>储存</strong><br>客户端储存：localStorage sessionStorage&gt;只存在一个会话周期内</p>
+</li>
+<li><p><strong>跨域</strong><br>postMessage</p>
+</li>
+</ul>
+<h4 id="【Web-app】"><a href="#【Web-app】" class="headerlink" title="【Web app】"></a>【Web app】</h4><ul>
+<li><p><strong>常见dpr</strong><br>ip6 2、ip6+ 3、nexus5 3</p>
+</li>
+<li><p><strong>移动端适配</strong><br>1.自适应方式<br>2.viewport方式<br>3.rem方式<br>4.scale()方式缩放</p>
+</li>
+<li><p><strong>常用meta</strong><br><strong><em>IE相关</em></strong><br>避免IE使用兼容模式 <code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;</code><br>为不支持viewport的IE Mobile设定宽度 <code>&lt;meta name=&quot;MobileOptimized&quot; content=&quot;320&quot; /&gt;</code><br>是否对手持设备友好 <code>&lt;meta name=&quot;HandheldFriendly&quot; content=&quot;true&quot; /&gt;</code><br><strong><em>UC浏览器</em></strong><br>强制竖屏 <code>&lt;meta name=&quot;screen-orientation&quot; content=&quot;portrait&quot; /&gt;</code><br>强制全屏 <code>&lt;meta name=&quot;full-screen&quot; content=&quot;yes&quot; /&gt;</code><br>应用模式 <code>&lt;meta name=&quot;browsermode&quot; content=&quot;application&quot; /&gt;</code><br><strong><em>X5浏览器</em></strong><br>强制竖屏 <code>&lt;meta name=&quot;x5-orientation&quot; content=&quot;portrait&quot; /&gt;</code><br>强制全屏 <code>&lt;meta name=&quot;x5-fullscreen&quot; content=&quot;yes&quot; /&gt;</code><br>应用模式 <code>&lt;meta name=&quot;x5-page-mode&quot; content=&quot;app&quot; /&gt;</code><br><strong><em>360</em></strong><br>开启极速模式 <code>&lt;meta name=&quot;renderer&quot; content=&quot;webkit&quot; /&gt;</code></p>
+</li>
+<li><p><strong>iphone相关</strong><br>启动webapp功能 删除工具栏和菜单栏 <code>&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;</code><br>控制状态栏颜色 <code>&lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black&quot; /&gt;</code><br>开启号码或邮箱检测 <code>&lt;meta name=&quot;format-detection&quot; content=&quot;telephone=no&quot; /&gt;</code><br>添加主屏幕icon <code>&lt;link rel=&quot;apple-touch-icon&quot; href=&quot;touch-icon-iphone.png&quot;&gt;</code></p>
+</li>
+</ul>
+<hr>
+<h3 id="『CSS3』"><a href="#『CSS3』" class="headerlink" title="『CSS3』"></a>『CSS3』</h3><h4 id="【新属性】"><a href="#【新属性】" class="headerlink" title="【新属性】"></a>【新属性】</h4><p>flex、column、文本换行、媒体查询、待补充……</p>
+<h4 id="开启GPU加速"><a href="#开启GPU加速" class="headerlink" title="开启GPU加速"></a>开启GPU加速</h4><p>注意启用<code>-webkit-backface-visibility:hidden;</code> <code>-webkit-perspective:1000;</code>解决启用<code>transform3d</code>页面闪烁和抖动问题</p>
+<h4 id="【动画】"><a href="#【动画】" class="headerlink" title="【动画】"></a>【动画】</h4><ul>
+<li><strong>CSS3动画性能</strong></li>
+</ul>
+<hr>
+<h3 id="『Javascript』"><a href="#『Javascript』" class="headerlink" title="『Javascript』"></a>『Javascript』</h3><h4 id="【原生】"><a href="#【原生】" class="headerlink" title="【原生】"></a>【原生】</h4><ul>
+<li><p><strong>js数据类型</strong><br>5基本 string number boolean undefined null 储存在栈内存中<br>1复杂 object 储存在堆内存中</p>
+</li>
+<li><p><strong>this指向</strong><br>this总是指向函数的直接调用者（而非间接调用者）</p>
+</li>
+<li><p><strong>null和undefined区别</strong><br>null表示一个无的对象<br>undefined表示一个无的初始值。表示此处应该有值，但还没有定义，即缺少值</p>
+</li>
+<li><p><strong>new的具体作用</strong><br>如<code>var p = new P();</code><br><code>var p = {}; //创建新对象</code><br><code>p.__proto__ = P.prototype; //继承构造函数的原型</code><br><code>P.call(p); //修改this指向</code></p>
+</li>
+<li><p><strong>创建对象方式</strong><br>对象字面量、工厂模式、构造函数、原型模式、构造函数+原型</p>
+</li>
+<li><p><strong>原型 原型链</strong><br>每个对象都有一个属性 prototype 当需要从对象中寻找属性时，如果在当前对象上没有找到就会从原型对象开始找 一直追溯到原型链的最顶端</p>
+</li>
+<li><p><strong>实现继承</strong><br>1.构造函数继承 <a href="http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance.html" target="_blank" rel="external">详细</a></p>
+<ul>
+<li><p>利用call、apply修改this指向</p>
+</li>
+<li><p>让子元素原型指向父元素实例，注意要修改子元素prototype.constructor指向</p>
+</li>
+<li><p>将需继承的属性写在父元素的prototype上，让子元素prototype指向父元素prototype，但在修改子元素prototype.constructor指向时会同时修改父元素prototype.constructor</p>
+</li>
+<li><p>同上方法 利用中介函数</p>
+</li>
+</ul>
+<p>2.非构造函数继承 <a href="http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance_continued.html" target="_blank" rel="external">详细</a><br>把父对象的属性，全部拷贝给子对象</p>
+</li>
+<li><p><strong>浅拷贝vs深拷贝</strong><br>浅拷贝<br>深拷贝 递归调用浅拷贝</p>
+</li>
+<li><p><strong>闭包</strong> <a href="http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html" target="_blank" rel="external">详细</a><br>用途：读取函数内部变量。变量得不到销毁，一直储存在内存中，可能造成内存泄漏</p>
+</li>
+<li><p><strong>内存泄漏</strong><br>指分配的内存既不能使用又得不到回收</p>
+<ul>
+<li><p>如为某元素绑定了一个事件，而该元素又从dom中移除</p>
+</li>
+<li><p>滥用闭包</p>
+</li>
+<li><p>两变量互相引用</p>
+</li>
+</ul>
+</li>
+<li><p><strong>原生Ajax实现过程</strong><br>1.获取XMLHttpRequest对象<br>2.xhr.open(type,url,ifAsyn)<br>3.监听xhr状态改变，xhr.onreadystatechange = function(){} xhr.readyState==4&amp;&amp;xhr.status==200说明请求成功<br>【readyState：0=未初始化 1=启动 2=发送 3=接收 4=完成】<br>4.xhr.send()</p>
+</li>
+<li><p><strong>GET和POST区别</strong><br>GET 安全性低 可传内容少 通过url传值<br>POST 安全性高 可传内容多 通过表单传值</p>
+</li>
+<li><p><strong>事件处理</strong> <a href="https://segmentfault.com/a/1190000002174034#articleHeader13" target="_blank" rel="external">详细</a></p>
+<ul>
+<li><p>事件委托<br>利用事件冒泡机制 将事件绑定在父元素上，节省性能</p>
+</li>
+<li><p>事件处理程序<br>DOM0 -&gt; DOM1 -&gt; DOM2 (对比与0，可同时绑定多个事件)</p>
+</li>
+<li><p>mouseover和mouseenter区别<br>mouseenter不冒泡</p>
+</li>
+</ul>
+</li>
+<li><p><strong>数组去重</strong><br>hash方式和index方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">Array.prototype.unique = function()&#123;</div><div class="line">var n = [];</div><div class="line">for(var i=0,len=this.length;i&lt;len;i++)&#123;</div><div class="line">    if(n.indexOf(this[i])==-1) &#123;</div><div class="line">        n.push(this[i])</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">return n;</div><div class="line">&#125;</div><div class="line">Array.prototype.unique2 = function()&#123;</div><div class="line">    var n = &#123;&#125;,a =[];</div><div class="line">    for(var i=0,len=this.length;i&lt;len;i++)&#123;</div><div class="line">        if(!n[this[i]]) &#123;</div><div class="line">            a.push(this[i]);</div><div class="line">            n[this[i]] = true;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return a;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>ES5数组新方法</strong></p>
+</li>
+<li><p><strong>斐波纳挈数列高效递归</strong> <a href="http://blog.163.com/thinker_creator/blog/static/1019331492009824102458749/" target="_blank" rel="external">详细</a><br>附斐波纳挈数列</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function getNthFibonacci(count) &#123;</div><div class="line">    var fibonacci = [1,1];</div><div class="line">    for(var i=2;i&lt;=count;i++)&#123;</div><div class="line">        fibonacci[i] = fibonacci[i-1]+ fibonacci[i-2];</div><div class="line">    &#125;</div><div class="line">    return fibonacci[count];</div><div class="line">&#125;;</div><div class="line">var a = getNthFibonacci(5);</div><div class="line">console.log(a)</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>getComputedStyle和style区别</strong><br>getC 只读 可获取未被style定义的样式<br>style 读写 只可获取含style的样式</p>
+</li>
+<li><p><strong>DOM</strong><br>插入新节点<br>document:createElement()、createDocumentFragment()、createTextNode()<br>insertBefore(new,old)<br>获取节点<br>childNodes、parentNode、previousSibling、nextSibling、firstChild、lastChild、children<br>节点操作<br>appendChild、removeChild、replaceChild、cloneNode、normalize<br>获取位置</p>
+<ul>
+<li><p>浏览器宽高 window.innerWidth document.documentElement.clientWidth</p>
+</li>
+<li><p>文档宽高 document.documentElement.offsetHeight、 document.documentElement.scrollHeight</p>
+</li>
+<li><p>到文档的最端处距离 offsetTop、offsetLeft</p>
+</li>
+</ul>
+</li>
+<li><p><strong>BOM</strong><br>浏览器内核 navigator.appVersion</p>
+</li>
+<li><p><strong>异步编程方法</strong><br>1.回调函数，这是异步编程最基本的方法。<br>2.事件监听，另一种思路是采用事件驱动模式。任务的执行不取决于代码的顺序，而取决于某个事件是否发生。<br>3.发布/订阅，上一节的”事件”，完全可以理解成”信号”。<br>4.Promises对象，Promises 对象是CommonJS 工作组提出的一种规范，目的是为异步编程提供统一接口。</p>
+</li>
+</ul>
+<h4 id="【jQuery】"><a href="#【jQuery】" class="headerlink" title="【jQuery】"></a>【jQuery】</h4><ul>
+<li><p><strong>操作DOM</strong></p>
+</li>
+<li><p><strong>ajax</strong></p>
+</li>
+</ul>
+<h4 id="【模块化】"><a href="#【模块化】" class="headerlink" title="【模块化】"></a>【模块化】</h4><h4 id="【MV-】详细"><a href="#【MV-】详细" class="headerlink" title="【MV*】详细"></a>【MV*】<a href="https://segmentfault.com/a/1190000003871577" target="_blank" rel="external">详细</a></h4><h4 id="【虚拟DOM】详细"><a href="#【虚拟DOM】详细" class="headerlink" title="【虚拟DOM】详细"></a>【虚拟DOM】<a href="https://segmentfault.com/a/1190000004029168" target="_blank" rel="external">详细</a></h4><p>以对象树的方式储存在内存中</p>
+<hr>
+<h3 id="『性能优化』"><a href="#『性能优化』" class="headerlink" title="『性能优化』"></a>『性能优化』</h3><ul>
+<li><p>雅虎14条 <a href="http://www.cnblogs.com/silverLee/archive/2009/11/05/1596453.html" target="_blank" rel="external">详细</a></p>
+</li>
+<li><p>移动端优化</p>
+</li>
+<li><p>16毫秒的优化 <a href="http://velocity.oreilly.com.cn/2013/ppts/16_ms_optimization--web_front-end_performance_optimization.pdf" target="_blank" rel="external">详细</a></p>
+<ol>
+<li><p>google提出1s完成终端首屏渲染：网络消耗+js执行与页面渲染</p>
+</li>
+<li><p>浏览器渲染频率1s 60帧，确保每一帧能在16ms内执行与渲染，尽可能避免重排与重绘</p>
+</li>
+<li><p>使用RAF控制渲染频率，减少重复渲染，避免事件重复执行</p>
+</li>
+<li><p>让js操作读写分离</p>
+</li>
+</ol>
+</li>
+<li><p>渲染路径优化</p>
+<ol>
+<li><p>最小化关键资源数量</p>
+</li>
+<li><p>最小化关键资源字节</p>
+</li>
+<li><p>最小化关键路径长度</p>
+</li>
+</ol>
+</li>
+<li><p>页面直出 <a href="http://web.jobbole.com/86412/" target="_blank" rel="external">详细</a></p>
+<ol>
+<li><p>server上获取数据并将数据与页面模板结合，在服务端渲染成最终的 HTML</p>
+</li>
+<li><p>返回最终的 HTML 展示</p>
+</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h3 id="『跨域与前端安全』"><a href="#『跨域与前端安全』" class="headerlink" title="『跨域与前端安全』"></a>『跨域与前端安全』</h3><ul>
+<li><p>跨域的方式</p>
+<ol>
+<li><p>JSONP：强行执行不同域下的JS文件，需要外部JS配合。只能用GET方式</p>
+</li>
+<li><p>CORS：服务器端设置Access-Control-Allow-Origin，使其能被其他域使用AJAX访问到</p>
+</li>
+<li><p>domain+iframe：只适用主域相同子域不同的两个站。需要将两个站的document.domain设成同一个主域</p>
+</li>
+<li><p>window.postMessage(msg,targetOrgin)</p>
+</li>
+</ol>
+</li>
+<li><p>跨域攻击 <a href="https://segmentfault.com/a/1190000004623125" target="_blank" rel="external">详细</a></p>
+<ol>
+<li><p>跨域脚本</p>
+</li>
+<li><p>跨域请求伪造</p>
+</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h3 id="『HTTP-』"><a href="#『HTTP-』" class="headerlink" title="『HTTP 』"></a>『HTTP 』</h3><ul>
+<li><p><strong>HTTP报文</strong></p>
+</li>
+<li><p><strong>HTTP/1 HTTP/2 HTTPS</strong> <a href="http://www.alloyteam.com/2016/07/httphttp2-0spdyhttps-reading-this-is-enough/" target="_blank" rel="external">详细</a><br>建立在TCP基础上</p>
+</li>
+<li><p><strong>状态码</strong></p>
+</li>
+<li><p><strong>缓存</strong><br>设置缓存 服务器返回<code>Cache-Control:max-age=xxx；expires:Thu, 03 Jan 2019 04:24:16 GMT</code>、设置<code>etag、last-modified</code></p>
+</li>
+</ul>
+<blockquote>
+<p>实际上浏览器输入 url 之后敲下回车就是先看本地 cache-control、expires 的情况，刷新(F5)就是忽略先看本地<br>cache-control、expires 的情况，带上条件<br>If-None-Match、If-Modified-Since，强制刷新(Ctrl + F5)就是不带条件的访问。</p>
+</blockquote>
+<ul>
+<li><strong>描述从输入url到一个页面展示在你面前的全部过程</strong></li>
+</ul>
+<ol>
+<li><p>DNS Lookup</p>
+</li>
+<li><p>建立TCP连接</p>
+</li>
+<li><p>发送http请求</p>
+</li>
+<li><p>服务器发送响应</p>
+</li>
+<li><p>浏览器加载解析DOM&amp;CSS</p>
+</li>
+<li><p>生成DOM Tree&amp;CSS RuleTree</p>
+</li>
+<li><p>DOMTree和CSS RuleTree结合生成RenderTree</p>
+</li>
+<li><p>对RenderTree上的每一个元素计算其坐标&gt;称为布局</p>
+</li>
+<li><p>对RenderTree的元素进行绘制和展示&gt;称为『painting』</p>
+</li>
+</ol>
+<ul>
+<li><strong>引申-当页面渲染时，浏览器发生了什么</strong></li>
+</ul>
+<hr>
+<h3 id="『工具』"><a href="#『工具』" class="headerlink" title="『工具』"></a>『工具』</h3><h4 id="【前端自动化工具】"><a href="#【前端自动化工具】" class="headerlink" title="【前端自动化工具】"></a>【前端自动化工具】</h4><ul>
+<li><p><strong>grunt</strong></p>
+</li>
+<li><p><strong>glup</strong></p>
+</li>
+</ul>
+<h4 id="【CSS预处理】"><a href="#【CSS预处理】" class="headerlink" title="【CSS预处理】"></a>【CSS预处理】</h4><p>优势：</p>
+<ol>
+<li><p>用嵌套方式写CSS，结构更加的清晰</p>
+</li>
+<li><p>可使用变量、函数，更类似编程的方式</p>
+</li>
+<li><p>可将一整套CSS拆分成若干个组件，粒子性、可组合的特点更加明显</p>
+</li>
+</ol>
+<ul>
+<li><p><strong>sass</strong></p>
+</li>
+<li><p><strong>less</strong></p>
+</li>
+<li><p><strong>compass</strong></p>
+</li>
+</ul>
+<hr>
+<h3 id="『数据结构』"><a href="#『数据结构』" class="headerlink" title="『数据结构』"></a>『数据结构』</h3><ul>
+<li><p><strong>排序</strong> <a href="http://www.cnblogs.com/codingmylife/archive/2012/10/21/2732980.html" target="_blank" rel="external">详细</a><br>不稳定的排序 快速排序、选择排序、希尔排序、堆排序</p>
+</li>
+<li><p><strong>二叉树原理与实现</strong></p>
+</li>
+</ul>
+<hr>
+<p>欢迎转载，但转载请注明来自”勿忘初心”的博客，并保持转载后文章内容的完整性。</p>
+<p>本文链接：<a href="http://lucylc.com/InterView/2017/02/24/前端面试题汇总2.html">http://lucylc.com/InterView/2017/02/24/前端面试题汇总2.html</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wxreword.png" alt="RossiLc WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/apli.jpg" alt="RossiLc Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/InterView-Question/" rel="tag"># InterView Question</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/InterView/2017/02/24/前端面试题汇总1.html" rel="next" title="前端面试题汇总1">
+                <i class="fa fa-chevron-left"></i> 前端面试题汇总1
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/InterView/2017/02/24/前端面试题汇总3.html" rel="prev" title="前端面试题汇总3">
+                前端面试题汇总3 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="InterView/2017/02/24/前端面试题汇总2.html"
+           data-title="前端面试题汇总2" data-url="http://lucylc.com/InterView/2017/02/24/前端面试题汇总2.html">
+      </div>
+    
+  </div>
+
+  <center><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="http://music.163.com/outchain/player?type=2&id=28947001&auto=1&height=66"></iframe></center>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/author.jpg"
+               alt="RossiLc" />
+          <p class="site-author-name" itemprop="name">RossiLc</p>
+           
+              <p class="site-description motion-element" itemprop="description">勿忘初心，方得始终。关注前端，分享生活。露西&罗西的博客 lucylc.com</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/rossilc" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/3242984124" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/158108149" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/yang-guang-shao-nian-90-68" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://coding.net/u/Rossi" target="_blank" title="Coding">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Coding
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://es6.ruanyifeng.com/" title="es6中文学习网站" target="_blank">es6中文学习网站</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://lucylc.com/" title="露西&罗西" target="_blank">露西&罗西</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#『HTML-amp-CSS基础』"><span class="nav-number">1.</span> <span class="nav-text">『HTML&CSS基础』</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#【HTML】"><span class="nav-number">1.1.</span> <span class="nav-text">【HTML】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#【CSS】"><span class="nav-number">1.2.</span> <span class="nav-text">【CSS】</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#『HTML5』"><span class="nav-number">2.</span> <span class="nav-text">『HTML5』</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#【新标签】"><span class="nav-number">2.1.</span> <span class="nav-text">【新标签】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#【新API】"><span class="nav-number">2.2.</span> <span class="nav-text">【新API】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#【Web-app】"><span class="nav-number">2.3.</span> <span class="nav-text">【Web app】</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#『CSS3』"><span class="nav-number">3.</span> <span class="nav-text">『CSS3』</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#【新属性】"><span class="nav-number">3.1.</span> <span class="nav-text">【新属性】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开启GPU加速"><span class="nav-number">3.2.</span> <span class="nav-text">开启GPU加速</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#【动画】"><span class="nav-number">3.3.</span> <span class="nav-text">【动画】</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#『Javascript』"><span class="nav-number">4.</span> <span class="nav-text">『Javascript』</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#【原生】"><span class="nav-number">4.1.</span> <span class="nav-text">【原生】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#【jQuery】"><span class="nav-number">4.2.</span> <span class="nav-text">【jQuery】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#【模块化】"><span class="nav-number">4.3.</span> <span class="nav-text">【模块化】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#【MV-】详细"><span class="nav-number">4.4.</span> <span class="nav-text">【MV*】详细</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#【虚拟DOM】详细"><span class="nav-number">4.5.</span> <span class="nav-text">【虚拟DOM】详细</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#『性能优化』"><span class="nav-number">5.</span> <span class="nav-text">『性能优化』</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#『跨域与前端安全』"><span class="nav-number">6.</span> <span class="nav-text">『跨域与前端安全』</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#『HTTP-』"><span class="nav-number">7.</span> <span class="nav-text">『HTTP 』</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#『工具』"><span class="nav-number">8.</span> <span class="nav-text">『工具』</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#【前端自动化工具】"><span class="nav-number">8.1.</span> <span class="nav-text">【前端自动化工具】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#【CSS预处理】"><span class="nav-number">8.2.</span> <span class="nav-text">【CSS预处理】</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#『数据结构』"><span class="nav-number">9.</span> <span class="nav-text">『数据结构』</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">rossilc,露西&罗西</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+    <span class="site-pv">本站总访问量<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"rossilc"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+      $('.search-mask').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $('.search-mask').click(function(e){
+      proceedsearch();
+    });
+  </script>
+
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("T0f5bAOwpwtDWVdyC4rtJDrb-gzGzoHsz", "G7uzBqwfwrT9RDzeDhVdGSaV");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

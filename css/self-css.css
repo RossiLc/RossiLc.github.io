@@ -1,0 +1,77 @@
+/*slide-bar样式*/
+
+/*链接9宫格*/
+.links-of-author{
+	width: 100%;
+	display: table;
+	word-spacing: 0;
+	box-sizing: border-box;
+	text-align: center;
+}
+span.links-of-author-item {
+  width: 30%;
+  display: inline-block;
+  text-align: center;
+  box-sizing: border-box;
+}
+span.links-of-author-item:nth-child(3n+1){
+	margin-left: 2%;
+}
+span.links-of-author-item:nth-child(3n){
+	margin-right: 2%;
+}
+
+.site-author-image{
+	max-width: 110px;
+	border-radius: 100%;
+}
+
+/*网站背景*/
+.container {
+	background:#e8f2e9 url(/images/bgmy.jpg) no-repeat ;
+	background-size: 100%;
+}
+.header{
+	background:#e8f2e9 url(/images/bgmy.jpg) no-repeat ;
+	background-size: 100%;
+}
+hr {
+  height: 1px;
+  background-image: repeating-linear-gradient(-45deg,rgba(23, 21, 21, 0.65),rgba(123, 87, 87, 0.77) 4px,transparent 4px,transparent 8px);
+}
+.highlight .gutter pre {
+  color: #fff;
+  background-color: #444748;
+}
+blockquote {
+    border-left: 4px solid #6CBF6C;
+}
+
+/*搜索mask*/
+.search-mask{
+	width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0,0,0,0.5);
+    left: 0;
+    top: 0;
+    display: none;
+}
+article.post.post-type-normal{
+  padding: 20px;
+  box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.1);
+  border-radius: 5px;
+}
+.posts-expand .post{
+  margin-top: 80px;
+}
+.btn:hover, .post-button .btn:hover {
+    background: #D6EAD8;
+}
+/*table样式*/
+table{
+  border-width: 2px;
+}
+table>tbody>tr:nth-of-type(even) {
+    background-color: #EFEDED;
+}
