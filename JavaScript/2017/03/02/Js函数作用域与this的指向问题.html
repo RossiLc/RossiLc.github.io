@@ -617,10 +617,14 @@
 <li><strong>我理解作用域是：函数名以及变量或者anguments所能访问或查找的规则，或者叫所能访问到内存区块。优先级是anguments-&gt;function表达式-&gt;var。变量在声明它们的函数体内(或嵌套函数内)任意地方都是有定义的</strong>。下面看一份代码：</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> scope=<span class="string">"global"</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">t</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(scope);</div><div class="line">    <span class="keyword">var</span> scope=<span class="string">"local"</span></div><div class="line">    <span class="built_in">console</span>.log(scope);</div><div class="line">&#125;</div><div class="line">t();</div></pre></td></tr></table></figure>
-<p>第一句输出的是： “undefined”，而不是 “global”<br>第二讲输出的是：”local”<br>你可能会认为第一句会输出：”global”,因为代码还没执行var scope=”local”,所以肯定会输出“global”。<br>上面已经讲过，变量在函数体内任意地方都是有定义的。在函数作用域创建阶段，首先会先生成变量对象VO：VO包括anguments、function、var变量的创建。到了函数执行阶段包括变量开始赋值、执行上下文this确定、代码执行。在第一句console.log打印时，函数作用域内只有var scope，scope并没有赋值。可以理解为下面代码：</p>
+<p>第一句输出的是： “undefined”，而不是 “global”
+第二讲输出的是：”local”
+你可能会认为第一句会输出：”global”,因为代码还没执行var scope=”local”,所以肯定会输出“global”。
+上面已经讲过，变量在函数体内任意地方都是有定义的。在函数作用域创建阶段，首先会先生成变量对象VO：VO包括anguments、function、var变量的创建。到了函数执行阶段包括变量开始赋值、执行上下文this确定、代码执行。在第一句console.log打印时，函数作用域内只有var scope，scope并没有赋值。可以理解为下面代码：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> scope=<span class="string">"global"</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">t</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> scope;</div><div class="line">    <span class="built_in">console</span>.log(scope);</div><div class="line">    scope=<span class="string">"local"</span></div><div class="line">    <span class="built_in">console</span>.log(scope);</div><div class="line">&#125;</div><div class="line">t();</div></pre></td></tr></table></figure>
 <p>在此看来，由于函数作用域的特性，局部变量在整个函数体始终是由定义的，我们可以将变量声明”提前“到函数体顶部，同时变量初始化还在原来位置。</p>
-<h3 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h3><p>这里来看一下执行上下文的生命周期：从创建–&gt;执行代码–&gt;执行完毕，出栈等待被回收。<br><img src="http://upload-images.jianshu.io/upload_images/599584-391af3aad043c028.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="执行上下文生命周期"></p>
+<h3 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h3><p>这里来看一下执行上下文的生命周期：从创建–&gt;执行代码–&gt;执行完毕，出栈等待被回收。
+<img src="http://upload-images.jianshu.io/upload_images/599584-391af3aad043c028.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="执行上下文生命周期"></p>
 <p>这里可以将作用域和作用域链结合起来理解：作用域是一块能够查询到的内存区域或者查询规则；作用域链，是对查询规则的实现或者内存寻址的过程，它保证了当前执行环境对符合访问权限的变量和函数的有序访问。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">20</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> b = a + <span class="number">10</span>;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">innerTest</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> c = <span class="number">10</span>;</div><div class="line">        <span class="keyword">return</span> b + c;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> innerTest();</div><div class="line">&#125;</div><div class="line">test();</div><div class="line"></div><div class="line"><span class="comment">//innerTest的执行上下文创建阶段如下：</span></div><div class="line">innerTestEC = &#123;</div><div class="line">    VO: &#123;...&#125;,  <span class="comment">// 变量对象</span></div><div class="line">    scopeChain: [VO(innerTest), VO(test), VO(global)], <span class="comment">// 作用域链</span></div><div class="line">    <span class="keyword">this</span>: &#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <blockquote>
@@ -669,7 +673,8 @@
 <li>返回新对象</li>
 </ul>
 <p>基本上prototype对象指向new操作符生成的实例，这里指向p1。</p>
-<p>查阅资料：<a href="http://www.jianshu.com/p/d647aa6d1ae6#" target="_blank" rel="external">感谢波同学的分享</a><br><a href="http://blog.csdn.net/yueguanghaidao/article/details/9568071" target="_blank" rel="external">csdn的一篇博客</a></p>
+<p>查阅资料：<a href="http://www.jianshu.com/p/d647aa6d1ae6#" target="_blank" rel="external">感谢波同学的分享</a>
+<a href="http://blog.csdn.net/yueguanghaidao/article/details/9568071" target="_blank" rel="external">csdn的一篇博客</a></p>
 <hr>
 <p>欢迎转载，但转载请注明来自”勿忘初心”的博客，并保持转载后文章内容的完整性。</p>
 <p>本文链接：<a href="http://lucylc.com/JavaScript/2017/03/02/Js函数作用域与this的指向问题.html">http://lucylc.com/JavaScript/2017/03/02/Js函数作用域与this的指向问题.html</a></p>
@@ -846,7 +851,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -855,7 +860,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -864,7 +869,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

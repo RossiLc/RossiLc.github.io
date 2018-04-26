@@ -605,17 +605,26 @@
 <h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">swig.init(&#123;</div><div class="line">  allowErrors: false,</div><div class="line">  autoescape: true,</div><div class="line">  cache: true,</div><div class="line">  encoding: &apos;utf8&apos;,</div><div class="line">  filters: &#123;&#125;,</div><div class="line">  root: &apos;/&apos;,</div><div class="line">  tags: &#123;&#125;,</div><div class="line">  extensions: &#123;&#125;,</div><div class="line">  tzOffset: 0</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>options:</p>
 <blockquote>
-<p><strong>allowErrors</strong>:<br>默认值为 false。将所有模板解析和编译错误直接输出到模板。如果为 true，则将引发错误，抛出到 Node.js 进程中，可能会使您的应用程序崩溃。</p>
-<p><strong>autoescape</strong>:<br>默认true，强烈建议保持。字符转换表请参阅转义过滤器。</p>
+<p><strong>allowErrors</strong>:
+默认值为 false。将所有模板解析和编译错误直接输出到模板。如果为 true，则将引发错误，抛出到 Node.js 进程中，可能会使您的应用程序崩溃。</p>
+<p><strong>autoescape</strong>:
+默认true，强烈建议保持。字符转换表请参阅转义过滤器。</p>
 <blockquote>
-<p>true: HTML安全转义<br>false: 不转义，除非使用转义过滤器或者转义标签<br>‘js’: js安全转义</p>
+<p>true: HTML安全转义
+false: 不转义，除非使用转义过滤器或者转义标签
+‘js’: js安全转义</p>
 </blockquote>
-<p><strong>cache</strong>:<br>更改为 false 将重新编译每个请求的模板的文件。正式环境建议保持true。</p>
-<p><strong>encoding</strong><br>模板文件编码</p>
-<p><strong>root</strong><br>需要搜索模板的目录。如果模板传递给 swig.compileFile 绝对路径(以/开头)，Swig不会在模板root中搜索。如果传递一个数组，使用第一个匹配成功的数组项。</p>
-<p><strong>tzOffset</strong><br>设置默认时区偏移量。此设置会使转换日期过滤器会自动的修正相应时区偏移量。</p>
+<p><strong>cache</strong>:
+更改为 false 将重新编译每个请求的模板的文件。正式环境建议保持true。</p>
+<p><strong>encoding</strong>
+模板文件编码</p>
+<p><strong>root</strong>
+需要搜索模板的目录。如果模板传递给 swig.compileFile 绝对路径(以/开头)，Swig不会在模板root中搜索。如果传递一个数组，使用第一个匹配成功的数组项。</p>
+<p><strong>tzOffset</strong>
+设置默认时区偏移量。此设置会使转换日期过滤器会自动的修正相应时区偏移量。</p>
 <p><strong>filters</strong> 自定义过滤器或者重写默认过滤器，参见自定义过滤器指南。</p>
-<p><strong>tags</strong><br>自定义标签或者重写默认标签，参见自定义标签指南。</p>
+<p><strong>tags</strong>
+自定义标签或者重写默认标签，参见自定义标签指南。</p>
 <p><strong>extensions</strong> 添加第三方库，可以在编译模板时使用，参见参见自定义标签指南。</p>
 </blockquote>
 <h3 id="nodejs"><a href="#nodejs" class="headerlink" title="nodejs"></a>nodejs</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var tpl = swig.compileFile(&quot;path/to/template/file.html&quot;);</div><div class="line">var renderedHtml = tpl.render(&#123; vars: &apos;to be inserted in template&apos; &#125;);</div></pre></td></tr></table></figure>
@@ -649,34 +658,58 @@
 <p>也可以使用 filter 标签来为块内容添加过滤器</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% filter upper %&#125;oh hi, paul&#123;% endfilter %&#125;</div></pre></td></tr></table></figure>
 <h3 id="内置过滤器"><a href="#内置过滤器" class="headerlink" title="内置过滤器"></a>内置过滤器</h3><blockquote>
-<p><strong>add(value)</strong><br>使变量与value相加，可以转换为数值字符串会自动转换为数值。</p>
-<p><strong>addslashes</strong><br>用 \ 转义字符串</p>
-<p><strong>capitalize</strong><br>大写首字母</p>
-<p><strong>date(format[, tzOffset])</strong><br>转换日期为指定格式</p>
+<p><strong>add(value)</strong>
+使变量与value相加，可以转换为数值字符串会自动转换为数值。</p>
+<p><strong>addslashes</strong>
+用 \ 转义字符串</p>
+<p><strong>capitalize</strong>
+大写首字母</p>
+<p><strong>date(format[, tzOffset])</strong>
+转换日期为指定格式</p>
 <blockquote>
-<p>format： 格式<br>tzOffset： 时区</p>
+<p>format： 格式
+tzOffset： 时区</p>
 </blockquote>
-<p><strong>default(value)</strong><br>默认值（如果变量为undefined，null，false）</p>
-<p><strong>e</strong><br>同escape</p>
-<p><strong>escape([type])</strong><br>转义字符</p>
+<p><strong>default(value)</strong>
+默认值（如果变量为undefined，null，false）</p>
+<p><strong>e</strong>
+同escape</p>
+<p><strong>escape([type])</strong>
+转义字符</p>
 <blockquote>
-<p>默认： &amp;, &lt;, &gt;, “, ‘<br>js: &amp;, &lt;, &gt;, “, ‘, =, -, ;</p>
+<p>默认： &amp;, &lt;, &gt;, “, ‘
+js: &amp;, &lt;, &gt;, “, ‘, =, -, ;</p>
 </blockquote>
-<p><strong>first</strong><br>返回数组第一个值</p>
-<p><strong>join(glue)</strong><br>同[].join</p>
-<p><strong>json_encode([indent])</strong><br>类似JSON.stringify, indent为缩进空格数</p>
-<p><strong>last</strong><br>返回数组最后一个值</p>
-<p><strong>length</strong><br>返回变量的length，如果是object，返回key的数量</p>
-<p><strong>lower</strong><br>同’’.toLowerCase()</p>
-<p><strong>raw</strong><br>指定输入不会被转义</p>
-<p><strong>replace(search, replace[, flags])</strong><br>同’’.replace</p>
-<p><strong>reverse</strong><br>翻转数组</p>
-<p><strong>striptags</strong><br>去除html/xml标签</p>
-<p><strong>title</strong><br>大写首字母</p>
-<p><strong>uniq</strong><br>数组去重</p>
-<p><strong>upper</strong><br>同’’.toUpperCase</p>
-<p><strong>url_encode</strong><br>同encodeURIComponent</p>
-<p><strong>url_decode</strong><br>同decodeURIComponemt</p>
+<p><strong>first</strong>
+返回数组第一个值</p>
+<p><strong>join(glue)</strong>
+同[].join</p>
+<p><strong>json_encode([indent])</strong>
+类似JSON.stringify, indent为缩进空格数</p>
+<p><strong>last</strong>
+返回数组最后一个值</p>
+<p><strong>length</strong>
+返回变量的length，如果是object，返回key的数量</p>
+<p><strong>lower</strong>
+同’’.toLowerCase()</p>
+<p><strong>raw</strong>
+指定输入不会被转义</p>
+<p><strong>replace(search, replace[, flags])</strong>
+同’’.replace</p>
+<p><strong>reverse</strong>
+翻转数组</p>
+<p><strong>striptags</strong>
+去除html/xml标签</p>
+<p><strong>title</strong>
+大写首字母</p>
+<p><strong>uniq</strong>
+数组去重</p>
+<p><strong>upper</strong>
+同’’.toUpperCase</p>
+<p><strong>url_encode</strong>
+同encodeURIComponent</p>
+<p><strong>url_decode</strong>
+同decodeURIComponemt</p>
 </blockquote>
 <h3 id="自定义过滤器"><a href="#自定义过滤器" class="headerlink" title="自定义过滤器"></a>自定义过滤器</h3><p>创建一个 myfilter.js 然后引入到 Swig 的初始化函数中</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">swig.init(&#123; filters: require(&apos;myfilters&apos;) &#125;);</div></pre></td></tr></table></figure>
@@ -687,18 +720,34 @@
 <p>你也可以像下面一样给 filter 传参数：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">exports.prefix = function(input, prefix) &#123;</div><div class="line">    return prefix.toString() + input.toString();</div><div class="line">&#125;;</div><div class="line"></div><div class="line">&#123;&#123; name|prefix(&apos;my prefix&apos;) &#125;&#125;</div><div class="line"></div><div class="line">&#123;% filter prefix &apos;my prefix&apos; %&#125;I will be prefixed with &quot;my prefix&quot;.&#123;% endfilter %&#125;</div><div class="line">&#123;% filter prefix foo %&#125;I will be prefixed with the value stored to `foo`.&#123;% endfilter %&#125;</div></pre></td></tr></table></figure>
 <h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><h3 id="内置标签"><a href="#内置标签" class="headerlink" title="内置标签"></a>内置标签</h3><blockquote>
-<p><strong>extends</strong><br>使当前模板继承父模板，必须在文件最前</p>
+<p><strong>extends</strong>
+使当前模板继承父模板，必须在文件最前</p>
 <blockquote>
-<p>参数：<br>file:<br>父模板相对模板 root 的相对路径</p>
+<p>参数：
+file:
+父模板相对模板 root 的相对路径</p>
 </blockquote>
-<p><strong>block</strong><br>定义一个块，使之可以被继承的模板重写，或者重写父模板的同名块</p>
+<p><strong>block</strong>
+定义一个块，使之可以被继承的模板重写，或者重写父模板的同名块</p>
 <blockquote>
-<p>参数：<br>name:<br>块的名字，必须以字母数字下划线开头</p>
+<p>参数：
+name:
+块的名字，必须以字母数字下划线开头</p>
 </blockquote>
-<p><strong>parent</strong><br>将父模板中同名块注入当前块中</p>
-<p><strong>include</strong><br>包含一个模板到当前位置，这个模板将使用当前上下文</p>
+<p><strong>parent</strong>
+将父模板中同名块注入当前块中</p>
+<p><strong>include</strong>
+包含一个模板到当前位置，这个模板将使用当前上下文</p>
 <blockquote>
-<p>参数：<br>file:<br>包含模板相对模板 root 的相对路径<br>ignore missing:<br>包含模板不存在也不会报错<br>with x:<br>设置 x 至根上下文对象以传递给模板生成。必须是一个键值对<br>only:<br>限制模板上下文中用 with x 定义的参数</p>
+<p>参数：
+file:
+包含模板相对模板 root 的相对路径
+ignore missing:
+包含模板不存在也不会报错
+with x:
+设置 x 至根上下文对象以传递给模板生成。必须是一个键值对
+only:
+限制模板上下文中用 with x 定义的参数</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt; &#123;% include template_path %&#125;</div><div class="line">&gt; &#123;% include &quot;path/to/template.js&quot; %&#125;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
 </blockquote>
@@ -725,20 +774,38 @@
 <p>&gt;</p>
 <blockquote>
 <p>only 必须作为最后一个参数，放在其他位置会被忽略</p>
-<p><strong>raw</strong><br>停止解析标记中任何内容，所有内容都将输出</p>
+<p><strong>raw</strong>
+停止解析标记中任何内容，所有内容都将输出</p>
 <blockquote>
-<p>参数：<br>file:<br>父模板相对模板 root 的相对路径</p>
+<p>参数：
+file:
+父模板相对模板 root 的相对路径</p>
 </blockquote>
-<p><strong>for</strong><br>遍历对象和数组</p>
+<p><strong>for</strong>
+遍历对象和数组</p>
 <blockquote>
-<p>参数：<br>x:<br>当前循环迭代名<br>in:<br>语法标记<br>y:<br>可迭代对象。可以使用过滤器修改</p>
+<p>参数：
+x:
+当前循环迭代名
+in:
+语法标记
+y:
+可迭代对象。可以使用过滤器修改</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&gt; &#123;% for x in y %&#125;</div><div class="line">&gt;     &#123;% if loop.first %&#125;&lt;ul&gt;&#123;% endif %&#125;</div><div class="line">&gt;     &lt;li&gt;&#123;&#123; loop.index &#125;&#125; - &#123;&#123; loop.key &#125;&#125;: &#123;&#123; x &#125;&#125;&lt;/li&gt;</div><div class="line">&gt;     &#123;% if loop.last %&#125;&lt;/ul&gt;&#123;% endif %&#125;</div><div class="line">&gt; &#123;% endfor %&#125;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
 </blockquote>
 <p>&gt;</p>
 <blockquote>
 <blockquote>
-<p>特殊循环变量<br>loop.index：当前循环的索引（1开始）<br>loop.index0：当前循环的索引（0开始）<br>loop.revindex：当前循环从结尾开始的索引（1开始）<br>loop.revindex0：当前循环从结尾开始的索引（0开始）<br>loop.key：如果迭代是对象，是当前循环的键，否则同 loop.index<br>loop.first：如果是第一个值返回 true<br>loop.last：如果是最后一个值返回 true<br>loop.cycle：一个帮助函数，以指定的参数作为周期</p>
+<p>特殊循环变量
+loop.index：当前循环的索引（1开始）
+loop.index0：当前循环的索引（0开始）
+loop.revindex：当前循环从结尾开始的索引（1开始）
+loop.revindex0：当前循环从结尾开始的索引（0开始）
+loop.key：如果迭代是对象，是当前循环的键，否则同 loop.index
+loop.first：如果是第一个值返回 true
+loop.last：如果是最后一个值返回 true
+loop.cycle：一个帮助函数，以指定的参数作为周期</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt; &#123;% for item in items %&#125;</div><div class="line">&gt;     &lt;li class=&quot;&#123;&#123; loop.cycle(&apos;odd&apos;, &apos;even&apos;) &#125;&#125;&quot;&gt;&#123;&#123; item &#125;&#125;&lt;/li&gt;</div><div class="line">&gt; &#123;% endfor %&#125;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
 </blockquote>
@@ -749,9 +816,12 @@
 </blockquote>
 <p>&gt;</p>
 <blockquote>
-<p><strong>if</strong><br>条件语句</p>
+<p><strong>if</strong>
+条件语句</p>
 <blockquote>
-<p>参数：<br>…:<br>接受任何有效的 JavaScript 条件语句，以及一些其他人类可读语法</p>
+<p>参数：
+…:
+接受任何有效的 JavaScript 条件语句，以及一些其他人类可读语法</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&gt; &#123;% if x %&#125;&#123;% endif %&#125;</div><div class="line">&gt; &#123;% if !x %&#125;&#123;% endif %&#125;</div><div class="line">&gt; &#123;% if not x %&#125;&#123;% endif %&#125;</div><div class="line">&gt;</div><div class="line">&gt; &#123;% if x and y %&#125;&#123;% endif %&#125;</div><div class="line">&gt; &#123;% if x &amp;&amp; y %&#125;&#123;% endif %&#125;</div><div class="line">&gt; &#123;% if x or y %&#125;&#123;% endif %&#125;</div><div class="line">&gt; &#123;% if x || y %&#125;&#123;% endif %&#125;</div><div class="line">&gt; &#123;% if x || (y &amp;&amp; z) %&#125;&#123;% endif %&#125;</div><div class="line">&gt;</div><div class="line">&gt; &#123;% if x [operator] y %&#125;</div><div class="line">&gt;     Operators: ==, !=, &lt;, &lt;=, &gt;, &gt;=, ===, !==</div><div class="line">&gt; &#123;% endif %&#125;</div><div class="line">&gt;</div><div class="line">&gt; &#123;% if x == &apos;five&apos; %&#125;</div><div class="line">&gt;     The operands can be also be string or number literals</div><div class="line">&gt; &#123;% endif %&#125;</div><div class="line">&gt;</div><div class="line">&gt; &#123;% if x|length === 3 %&#125;</div><div class="line">&gt;     You can use filters on any operand in the statement.</div><div class="line">&gt; &#123;% endif %&#125;</div><div class="line">&gt;</div><div class="line">&gt; &#123;% if x in y %&#125;</div><div class="line">&gt;     If x is a value that is present in y, this will return true.</div><div class="line">&gt; &#123;% endif %&#125;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
 </blockquote>
@@ -762,9 +832,14 @@
 </blockquote>
 <p>&gt;</p>
 <blockquote>
-<p><strong>autoescape</strong><br>改变当前变量的自动转义行为</p>
+<p><strong>autoescape</strong>
+改变当前变量的自动转义行为</p>
 <blockquote>
-<p>参数：<br>on:<br>当前内容是否转义<br>type:<br>转义类型，js 或者 html，默认 html</p>
+<p>参数：
+on:
+当前内容是否转义
+type:
+转义类型，js 或者 html，默认 html</p>
 </blockquote>
 <p>假设</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; some_html_output = &apos;&lt;p&gt;Hello &quot;you&quot; &amp; \&apos;them\&apos;&lt;/p&gt;&apos;;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
@@ -781,17 +856,27 @@
 </blockquote>
 <p>&gt;</p>
 <blockquote>
-<p><strong>set</strong><br>设置一个变量，在当前上下文中复用</p>
+<p><strong>set</strong>
+设置一个变量，在当前上下文中复用</p>
 <blockquote>
-<p>参数：<br>name:<br>变量名<br>=:<br>语法标记<br>value:<br>变量值</p>
+<p>参数：
+name:
+变量名
+=:
+语法标记
+value:
+变量值</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt; &#123;% set foo = [0, 1, 2, 3, 4, 5] %&#125;</div><div class="line">&gt; &#123;% for num in foo %&#125;</div><div class="line">&gt;     &lt;li&gt;&#123;&#123; num &#125;&#125;&lt;/li&gt;</div><div class="line">&gt; &#123;% endfor %&#125;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
 </blockquote>
 <p>&gt;</p>
 <blockquote>
-<p><strong>macro</strong><br>创建自定义可服用的代码段</p>
+<p><strong>macro</strong>
+创建自定义可服用的代码段</p>
 <blockquote>
-<p>参数：<br>…:<br>用户定义</p>
+<p>参数：
+…:
+用户定义</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt; &#123;% macro input type name id label value error %&#125;</div><div class="line">&gt; &lt;label for=&quot;&#123;&#123; name &#125;&#125;&quot;&gt;&#123;&#123; label &#125;&#125;&lt;/label&gt;</div><div class="line">&gt; &lt;input type=&quot;&#123;&#123; type &#125;&#125;&quot; name=&quot;&#123;&#123; name &#125;&#125;&quot; id=&quot;&#123;&#123; id &#125;&#125;&quot; value=&quot;&#123;&#123; value &#125;&#125;&quot;&#123;% if error %&#125; class=&quot;error&quot;&#123;% endif %&#125;&gt;</div><div class="line">&gt; &#123;% endmacro %&#125;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
 </blockquote>
@@ -807,17 +892,26 @@
 </blockquote>
 <p>&gt;</p>
 <blockquote>
-<p><strong>import</strong><br>允许引入另一个模板的宏进入当前上下文</p>
+<p><strong>import</strong>
+允许引入另一个模板的宏进入当前上下文</p>
 <blockquote>
-<p>参数：<br>file:<br>引入模板相对模板 root 的相对路径<br>as:<br>语法标记 var: 分配给宏的可访问上下文对象</p>
+<p>参数：
+file:
+引入模板相对模板 root 的相对路径
+as:
+语法标记 var: 分配给宏的可访问上下文对象</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&gt; &#123;% import &apos;formmacros.html&apos; as form %&#125;</div><div class="line">&gt;</div><div class="line">&gt; &#123;# this will run the input macro #&#125;</div><div class="line">&gt; &#123;&#123; form.input(&quot;text&quot;, &quot;name&quot;) &#125;&#125;</div><div class="line">&gt;</div><div class="line">&gt; &#123;# this, however, will NOT output anything because the macro is scoped to the &quot;form&quot; object: #&#125;</div><div class="line">&gt; &#123;&#123; input(&quot;text&quot;, &quot;name&quot;) &#125;&#125;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
 </blockquote>
 <p>&gt;</p>
 <blockquote>
-<p><strong>filter</strong><br>对整个块应用过滤器</p>
+<p><strong>filter</strong>
+对整个块应用过滤器</p>
 <blockquote>
-<p>参数：<br>filter_name:<br>过滤器名字 … :<br>若干传给过滤器的参数 父模板相对模板 root 的相对路径</p>
+<p>参数：
+filter_name:
+过滤器名字 … :
+若干传给过滤器的参数 父模板相对模板 root 的相对路径</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt; &#123;% filter uppercase %&#125;oh hi, &#123;&#123; name &#125;&#125;&#123;% endfilter %&#125;</div><div class="line">&gt; &#123;% filter replace &quot;.&quot; &quot;!&quot; &quot;g&quot; %&#125;Hi. My name is Paul.&#123;% endfilter %&#125;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
 </blockquote>
@@ -828,7 +922,8 @@
 </blockquote>
 <p>&gt;</p>
 <blockquote>
-<p><strong>spaceless</strong><br>尝试移除html标签间的空格</p>
+<p><strong>spaceless</strong>
+尝试移除html标签间的空格</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&gt; &#123;% spaceless %&#125;</div><div class="line">&gt; &#123;% for num in foo %&#125;</div><div class="line">&gt;     &lt;li&gt;&#123;&#123; loop.index &#125;&#125;&lt;/li&gt;</div><div class="line">&gt; &#123;% endfor %&#125;</div><div class="line">&gt; &#123;% endspaceless %&#125;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
 </blockquote>
 <p>&gt;</p>
@@ -1013,7 +1108,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1022,7 +1117,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1031,7 +1126,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

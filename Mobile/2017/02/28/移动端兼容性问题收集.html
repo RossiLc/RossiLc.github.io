@@ -641,7 +641,8 @@
 <h3 id="17-Input-的placeholder会出现文本位置偏上的情况"><a href="#17-Input-的placeholder会出现文本位置偏上的情况" class="headerlink" title="17. Input 的placeholder会出现文本位置偏上的情况"></a>17. Input 的placeholder会出现文本位置偏上的情况</h3><p>input 的placeholder会出现文本位置偏上的情况：PC端设置line-height等于height能够对齐，而移动端仍然是偏上，解决是设置line-height：normal</p>
 <h3 id="18-往返缓存问题"><a href="#18-往返缓存问题" class="headerlink" title="18. 往返缓存问题"></a>18. 往返缓存问题</h3><p>点击浏览器的回退，有时候不会自动执行js，特别是在mobilesafari中。这与<strong>往返缓存(bfcache)</strong>有关系。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">解决方法 ：window.onunload = function()&#123;&#125;;</div></pre></td></tr></table></figure>
-<h3 id="19-calc的兼容性处理"><a href="#19-calc的兼容性处理" class="headerlink" title="19. calc的兼容性处理"></a>19. calc的兼容性处理</h3><p>CSS3中的calc变量在iOS6浏览器中必须加-webkit-前缀，目前的FF浏览器已经无需-moz-前缀。<br>Android浏览器目前仍然不支持calc，所以要在之前增加一个保守尺寸：</p>
+<h3 id="19-calc的兼容性处理"><a href="#19-calc的兼容性处理" class="headerlink" title="19. calc的兼容性处理"></a>19. calc的兼容性处理</h3><p>CSS3中的calc变量在iOS6浏览器中必须加-webkit-前缀，目前的FF浏览器已经无需-moz-前缀。
+Android浏览器目前仍然不支持calc，所以要在之前增加一个保守尺寸：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">div &#123;</div><div class="line">    width: 95%;</div><div class="line">    width: -webkit-calc(100% - 50px);</div><div class="line">    width: calc(100% - 50px);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="20-iOS6下伪类-hover"><a href="#20-iOS6下伪类-hover" class="headerlink" title="20. iOS6下伪类:hover"></a>20. iOS6下伪类:hover</h3><p>除了<a>之外的元素无效；在Android下则有效。类似</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">div#topFloatBar_l:hover #topFloatBar_menu &#123; display:block; &#125;</div></pre></td></tr></table></figure>
@@ -676,7 +677,8 @@
 </code></pre><h4 id="B、-active-效果不兼容"><a href="#B、-active-效果不兼容" class="headerlink" title="B、:active 效果不兼容"></a>B、:active 效果不兼容</h4><p><img src="http://ossweb-img.qq.com/upload/webplat/info/tgideas/20141118/1416304280054931.gif" alt=""></p>
 <pre><code>在android 4.0版本以下CSS :active伪状态效果无法兼容，我们给该元素的touch系列的事件（touchstart/touchend/touchmove）绑定一个空匿名方法:
 </code></pre><blockquote>
-<p>var element=document.getElementsById(”btnShare”);<br>element.addEventListener(‘touchstart’,function(){},false);</p>
+<p>var element=document.getElementsById(”btnShare”);
+element.addEventListener(‘touchstart’,function(){},false);</p>
 </blockquote>
 <h3 id="25-应用"><a href="#25-应用" class="headerlink" title="25.应用"></a>25.应用</h3><h4 id="A、浏览器崩溃"><a href="#A、浏览器崩溃" class="headerlink" title="A、浏览器崩溃"></a>A、浏览器崩溃</h4><p><img src="http://ossweb-img.qq.com/upload/webplat/info/tgideas/20141118/1416304280070135.jpg" alt=""></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">var act = function()&#123;</div><div class="line">    window.removeEventListener(&apos;devicemotion&apos;,act);</div><div class="line">&#125;;</div><div class="line">window.addEventListener(&apos;devicemotion&apos;,act,false);</div></pre></td></tr></table></figure>
@@ -887,7 +889,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -896,7 +898,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -905,7 +907,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

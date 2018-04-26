@@ -3,6 +3,88 @@
 
 
     
+  <url>
+    <loc>http://lucylc.com/JavaScript/2018/04/16/JavaScript%E4%B8%ADObject%E5%8E%9F%E7%94%9F%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93.html</loc>
+    <lastmod>2018-04-26T08:57:05.267Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript中Object原生方法总结</title>
+        <pubTime>2018-04-16T04:11:25.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="http://lucylc.com/categories/JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lucylc.com/JavaScript/2018/04/22/%E5%AE%9E%E7%94%A8%E5%9E%8BJavaScript%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93.html</loc>
+    <lastmod>2018-04-26T08:22:54.198Z</lastmod>
+    <data>
+        <display>
+        <title>实用型JavaScript方法总结--持续更新中</title>
+        <pubTime>2018-04-22T09:11:25.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="http://lucylc.com/categories/JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lucylc.com/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/2018/04/16/JavaScript%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%80%BB%E7%BB%93.html</loc>
+    <lastmod>2018-04-26T07:51:43.298Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript常用设计模式总结</title>
+        <pubTime>2018-04-16T09:11:25.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计模式" url="http://lucylc.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lucylc.com/JavaScript/2018/04/10/JavaScript%E4%B8%AD%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%B8%B8%E8%AF%86.html</loc>
+    <lastmod>2018-04-26T07:30:13.056Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript中位运算符的基本常识</title>
+        <pubTime>2018-04-10T09:11:25.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="http://lucylc.com/categories/JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
     
     
@@ -72,12 +154,12 @@
 
     
   <url>
-    <loc>http://lucylc.com/InterView/2017/02/24/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB2.html</loc>
+    <loc>http://lucylc.com/InterView/2017/02/24/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB3.html</loc>
     <lastmod>2017-08-20T10:15:40.967Z</lastmod>
     <data>
         <display>
-        <title>前端面试题汇总2</title>
-        <pubTime>2017-02-24T02:08:53.000Z</pubTime>
+        <title>前端面试题汇总3</title>
+        <pubTime>2017-02-24T02:10:24.000Z</pubTime>
         
         <tag>InterView Question</tag>
          
@@ -92,12 +174,12 @@
 
     
   <url>
-    <loc>http://lucylc.com/InterView/2017/02/24/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB3.html</loc>
+    <loc>http://lucylc.com/InterView/2017/02/24/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB2.html</loc>
     <lastmod>2017-08-20T10:15:40.967Z</lastmod>
     <data>
         <display>
-        <title>前端面试题汇总3</title>
-        <pubTime>2017-02-24T02:10:24.000Z</pubTime>
+        <title>前端面试题汇总2</title>
+        <pubTime>2017-02-24T02:08:53.000Z</pubTime>
         
         <tag>InterView Question</tag>
          
@@ -242,26 +324,6 @@
 
     
   <url>
-    <loc>http://lucylc.com/JavaScript/2017/03/02/Js%E5%87%BD%E6%95%B0%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8Ethis%E7%9A%84%E6%8C%87%E5%90%91%E9%97%AE%E9%A2%98.html</loc>
-    <lastmod>2017-08-20T10:15:40.945Z</lastmod>
-    <data>
-        <display>
-        <title>Js函数作用域与this的指向问题</title>
-        <pubTime>2017-03-02T02:08:03.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="JavaScript" url="http://lucylc.com/categories/JavaScript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://lucylc.com/Editor/2017/02/22/MarkDown%E7%AE%80%E6%98%8E%E8%AF%AD%E6%B3%95.html</loc>
     <lastmod>2017-08-20T10:15:40.945Z</lastmod>
     <data>
@@ -275,6 +337,26 @@
            
              
               <breadCrumb title="Editor" url="http://lucylc.com/categories/Editor/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lucylc.com/JavaScript/2017/03/02/Js%E5%87%BD%E6%95%B0%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8Ethis%E7%9A%84%E6%8C%87%E5%90%91%E9%97%AE%E9%A2%98.html</loc>
+    <lastmod>2017-08-20T10:15:40.945Z</lastmod>
+    <data>
+        <display>
+        <title>Js函数作用域与this的指向问题</title>
+        <pubTime>2017-03-02T02:08:03.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="http://lucylc.com/categories/JavaScript/"/>
           
         </display>
     </data>

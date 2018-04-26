@@ -89,18 +89,18 @@
 
 
 
-<meta name="description" content="requirejs和seajs二者在加载上都有缺陷，就是模块的依赖要等到模块加载完成后，通过静态分析（seajs）或者deps参数（requirejs）来获取，这就为 合并请求 和 按需加载 带来了实现上的矛盾：  要么放弃按需加载，把所有js合成一个文件，从而满足请求合并（两个框架的官方demo都有这样的例子）；要么放弃请求合并，请求独立的模块文件，从而满足按需加载。AMD规范在执行callba">
+<meta name="description" content="requirejs和seajs二者在加载上都有缺陷，就是模块的依赖要等到模块加载完成后，通过静态分析（seajs）或者deps参数（requirejs）来获取，这就为 合并请求 和 按需加载 带来了实现上的矛盾：  要么放弃按需加载，把所有js合成一个文件，从而满足请求合并（两个框架的官方demo都有这样的例子）； 要么放弃请求合并，请求独立的模块文件，从而满足按需加载。 AMD规范在执行call">
 <meta name="keywords" content="SeaJS,RequireJS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="理解 SeaJS 与 RequireJS 的差异">
 <meta property="og:url" content="http://lucylc.com/前端模块化/2017/03/02/理解seaSs和requireJs的差异.html">
 <meta property="og:site_name" content="勿忘初心">
-<meta property="og:description" content="requirejs和seajs二者在加载上都有缺陷，就是模块的依赖要等到模块加载完成后，通过静态分析（seajs）或者deps参数（requirejs）来获取，这就为 合并请求 和 按需加载 带来了实现上的矛盾：  要么放弃按需加载，把所有js合成一个文件，从而满足请求合并（两个框架的官方demo都有这样的例子）；要么放弃请求合并，请求独立的模块文件，从而满足按需加载。AMD规范在执行callba">
+<meta property="og:description" content="requirejs和seajs二者在加载上都有缺陷，就是模块的依赖要等到模块加载完成后，通过静态分析（seajs）或者deps参数（requirejs）来获取，这就为 合并请求 和 按需加载 带来了实现上的矛盾：  要么放弃按需加载，把所有js合成一个文件，从而满足请求合并（两个框架的官方demo都有这样的例子）； 要么放弃请求合并，请求独立的模块文件，从而满足按需加载。 AMD规范在执行call">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-08-20T10:15:40.969Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="理解 SeaJS 与 RequireJS 的差异">
-<meta name="twitter:description" content="requirejs和seajs二者在加载上都有缺陷，就是模块的依赖要等到模块加载完成后，通过静态分析（seajs）或者deps参数（requirejs）来获取，这就为 合并请求 和 按需加载 带来了实现上的矛盾：  要么放弃按需加载，把所有js合成一个文件，从而满足请求合并（两个框架的官方demo都有这样的例子）；要么放弃请求合并，请求独立的模块文件，从而满足按需加载。AMD规范在执行callba">
+<meta name="twitter:description" content="requirejs和seajs二者在加载上都有缺陷，就是模块的依赖要等到模块加载完成后，通过静态分析（seajs）或者deps参数（requirejs）来获取，这就为 合并请求 和 按需加载 带来了实现上的矛盾：  要么放弃按需加载，把所有js合成一个文件，从而满足请求合并（两个框架的官方demo都有这样的例子）； 要么放弃请求合并，请求独立的模块文件，从而满足按需加载。 AMD规范在执行call">
 
 
 
@@ -587,18 +587,22 @@
       
         <p>requirejs和seajs二者在加载上都有缺陷，就是模块的依赖要等到模块加载完成后，通过静态分析（seajs）或者deps参数（requirejs）来获取，这就为 合并请求 和 按需加载 带来了实现上的矛盾：</p>
 <blockquote>
-<p>要么放弃按需加载，把所有js合成一个文件，从而满足请求合并（两个框架的官方demo都有这样的例子）；<br>要么放弃请求合并，请求独立的模块文件，从而满足按需加载。<br>AMD规范在执行callback的时候，要初始化所有依赖的模块，而CMD只有执行到require的时候才初始化模块.</p>
+<p>要么放弃按需加载，把所有js合成一个文件，从而满足请求合并（两个框架的官方demo都有这样的例子）；
+要么放弃请求合并，请求独立的模块文件，从而满足按需加载。
+AMD规范在执行callback的时候，要初始化所有依赖的模块，而CMD只有执行到require的时候才初始化模块.</p>
 </blockquote>
 <a id="more"></a>
 <h3 id="CMD-模块依赖声明方式"><a href="#CMD-模块依赖声明方式" class="headerlink" title="CMD 模块依赖声明方式"></a>CMD 模块依赖声明方式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">define(<span class="function"><span class="keyword">function</span> (<span class="params">require</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="built_in">require</span>(<span class="string">'./a'</span>);</div><div class="line">    <span class="keyword">var</span> b = <span class="built_in">require</span>(<span class="string">'./b'</span>);</div><div class="line">    <span class="comment">// more code ..</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>CMD 依赖是就近声明，通过内部require方法进行声明。但是因为是异步模块，加载器需要提前加载这些模块，所以模块真正使用前需要提取模块里面所有的依赖。无论是加载器即时提取，还是通过自动化工具预先提取，CMD 的这种依赖声明格式只能通过静态分析方式实现，这也正是 CMD 的弊端所在。</p>
-<h4 id="CMD-规范的弊端"><a href="#CMD-规范的弊端" class="headerlink" title="CMD 规范的弊端"></a>CMD 规范的弊端</h4><p>1.不能直接压缩：require是局部变量，意味着不能直接的通过压缩工具进行压缩，若require这个变量被替换，加载器与自动化工具将无法获取模块的依赖。<br>2.模块书写有额外约定：路径参数不能进行字符串运算，不能使用变量代替，否则加载器与自动化工具无法正确提取路径。</p>
+<h4 id="CMD-规范的弊端"><a href="#CMD-规范的弊端" class="headerlink" title="CMD 规范的弊端"></a>CMD 规范的弊端</h4><p>1.不能直接压缩：require是局部变量，意味着不能直接的通过压缩工具进行压缩，若require这个变量被替换，加载器与自动化工具将无法获取模块的依赖。
+2.模块书写有额外约定：路径参数不能进行字符串运算，不能使用变量代替，否则加载器与自动化工具无法正确提取路径。</p>
 <blockquote>
 <p>注：SeaJS 静态分析实现是把模块包toString()后使用正则提取require部分得到依赖的模块路径。</p>
 </blockquote>
 <h3 id="AMD-模块依赖声明方式"><a href="#AMD-模块依赖声明方式" class="headerlink" title="AMD 模块依赖声明方式"></a>AMD 模块依赖声明方式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">define([<span class="string">'./a'</span>, <span class="string">'./b'</span>], <span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123;</div><div class="line">    <span class="comment">// more code ..</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>AMD 的依赖是提前声明。这种优势的好处就是依赖无需通过静态分析，无论是加载器还是自动化工具都可以很直接的获取到依赖，规范的定义可以更简单，意味着可能产生更强大的实现，这对加载器与自动化分析工具都是有利的。</p>
-<h4 id="AMD-规范的弊端"><a href="#AMD-规范的弊端" class="headerlink" title="AMD 规范的弊端"></a>AMD 规范的弊端</h4><p>1.依赖提前声明在代码书写上不是那么友好<br>2.模块内部与 NodeJS 的 Modules 有一定的差异</p>
+<h4 id="AMD-规范的弊端"><a href="#AMD-规范的弊端" class="headerlink" title="AMD 规范的弊端"></a>AMD 规范的弊端</h4><p>1.依赖提前声明在代码书写上不是那么友好
+2.模块内部与 NodeJS 的 Modules 有一定的差异</p>
 <p>关于第二点的问题需要特别说明下。其实无论是 CMD 还是 AMD 的异步模块，都无法与同步模块规范保持一致（NodeJS 的 Modules），只有谁比谁更像同步模块而已。AMD 要转换为同步模块，除了去掉define函数的包裹外，需要在头部使用require把依赖声明好，而 CMD 只需要去掉define函数的包裹即可。</p>
 <hr>
 <p>欢迎转载，但转载请注明来自”勿忘初心”的博客，并保持转载后文章内容的完整性。</p>
@@ -778,7 +782,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -787,7 +791,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -796,7 +800,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
